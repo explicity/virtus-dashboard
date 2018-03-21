@@ -1,0 +1,78 @@
+@import './../../styles.scss';
+
+// colors
+$color-inner: #f6f7fa;
+
+.signup-section {
+  min-height: 100vh;
+  background: url('./img/bg.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner {
+    width: 600px;
+    max-width: 100%;
+    background-color: $color-inner;
+    box-shadow: 0 0 139px rgba(147, 161, 185, 0.59);
+
+    &-header {
+      background-color: $color-main;
+      height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .brand {
+        margin-left: 30px;
+
+        &-logo {
+          text-transform: uppercase;
+          color: $color-white;
+          font-weight: 300;
+          font-size: 25px;
+          letter-spacing: 3px;
+        }
+      }
+    }
+
+    .nav {
+      &-tabs {
+        border: none;
+        height: 75px;
+      }
+
+      &-item {
+        display: flex;
+        width: 90px;
+        margin-bottom: 0;
+        margin-top: 3px;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: $color-white !important;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &:hover {
+          border: none;
+          cursor: pointer;
+        }
+
+        &.active {
+          margin-top: 5px;
+          background-color: $color-main;
+          border: none;
+          border-bottom: 5px solid $color-secondary;
+        }
+      }
+    }
+  }
+}
