@@ -26,40 +26,40 @@ export default class SignUp extends Component {
   }
 
   render() {
-    return (
-      <div className="signup-section">
-        <div className="inner">
-          <div className="inner-header">
-            <header className="brand">
-              <img src={Logo} alt="brand-logo" />
-            </header>
+    return ( 
+        <div className="signup-section">
+            <div className="inner">
+                <div className="inner-header">
+                    <header className="brand">
+                        <img src={Logo} alt="brand-logo" />
+                    </header>
 
-            <Nav tabs>
-              <NavItem>
-                <NavLink
-                  className={this.state.activeTab === '1' ? 'active' : ''}
-                  onClick={() => {
-                    this.toggle('1');
-                  }}
-                >
-                  Register
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className={this.state.activeTab === '2' ? 'active' : ''}
-                  onClick={() => {
-                    this.toggle('2');
-                  }}
-                >
-                  Login
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </div>
-          <SignUpTabs activeTab={this.state.activeTab} update={this.toggle} />
+                    <Nav tabs>
+                        <NavItem>
+                            <NavLink
+                                className={this.state.activeTab === '1' ? 'active' : ''}
+                                onClick={() => {
+                                    this.toggle('1');
+                                }}
+                            >
+                                Register
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={this.state.activeTab === '2' ? 'active' : ''}
+                                onClick={() => {
+                                    this.toggle('2');
+                                }}
+                            >
+                                Login
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                </div>
+                <SignUpTabs activeTab={this.state.activeTab} update={this.toggle} />
+            </div>
         </div>
-      </div>
     );
   }
 }

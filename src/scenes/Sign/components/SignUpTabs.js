@@ -20,14 +20,14 @@ export default class SignUpTabs extends Component {
 
   render() {
     return (
-      <TabContent activeTab={this.props.activeTab}>
-        <TabPane tabId="1">
-          <Register update={this.updateState} />
-        </TabPane>
-        <TabPane tabId="2">
-          <Login />
-        </TabPane>
-      </TabContent>
+        <TabContent activeTab={this.props.activeTab}>
+            <TabPane tabId="1">
+                <Register update={this.updateState} />
+            </TabPane>
+            <TabPane tabId="2">
+                <Login />
+            </TabPane>
+        </TabContent>
     );
   }
 }
