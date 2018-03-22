@@ -12,22 +12,24 @@ import SignUp from './scenes/Sign/SignUp.js';
 import HomePage from './scenes/Home/HomePage.js';
 
 const Routes = () => {
-  const DefaultLayout = ({ component: Component }) => ( 
-    <Route
-      render={props =>
-        localStorage.getItem('userData') ? (
-          <div>
+  const DefaultLayout = ({ component: Component }) => {
+    let user = JSON.parse(localStorage.getItem('userData')) || {};
+
+    return (
+      <Route
+        render={props =>
+          user.online ? (
+            <div>
               <Menus />
               <Component {...props} />
-          </div>
-        ) : (
-          <Redirect
-            to={{ pathname: '/', state: { from: props.location } }}
-          />
-        )
-      }
-    />
-  );
+            </div>
+          ) : (
+            <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          )
+        }
+      />
+    );
+  };
 
   return (
     <Router history={browserHistory}>

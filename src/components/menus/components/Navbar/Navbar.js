@@ -8,12 +8,15 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
+import { connect } from 'react-redux';
+
+import { userActions } from './../../../../redux/actions/index.js';
 
 import Logo from './img/logo.png';
 import Avatar from './img/user.jpg';
 import './navigation.scss';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
 
@@ -22,6 +25,7 @@ export default class Navbar extends Component {
     };
 
     this.toggle = this.toggle.bind(this);
+    this.clearStorage = this.clearStorage.bind(this);
   }
 
   toggle() {
@@ -30,16 +34,22 @@ export default class Navbar extends Component {
     });
   }
 
+  clearStorage() {
+    const { dispatch } = this.props;
+    dispatch(userActions.logout());
+  }
+
   render() {
     const { dropdownOpen } = this.state;
     return (
-      <header className="header">
+      <header className="header fixed-top">
         <div className="navbar">
           <Link to="/home" className="brand">
             <img
               src={Logo}
               alt="brand-logo"
-              style={{ width: 155, height: 23 }}
+              style={{ width: 118, height: 20 }}
+              className="brand-logo"
             />
             <span className="sr-only">Virtus-logo</span>
           </Link>
@@ -93,3 +103,5 @@ export default class Navbar extends Component {
     );
   }
 }
+
+export default connect()(Navbar);

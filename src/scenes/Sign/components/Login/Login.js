@@ -21,6 +21,11 @@ class LoginPage extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch(userActions.logout());
+  }
+
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -39,69 +44,68 @@ class LoginPage extends Component {
 
   render() {
     const { username, password, submitted } = this.state;
-    const { alert } = this.props;
+    const { alert, loggedIn } = this.props;
     return (
-        <div className="tab-section">
-            {alert.message && (
-                <div className={`alert ${alert.type}`}>{alert.message}</div>
-            )}
-            <div className="container ">
-                <h2 className="tab-section-title">
-                    Welcome <span>back!</span>
-                </h2>
+      <div className="tab-section">
+        {alert.message && (
+          <div className={`alert ${alert.type}`}>{alert.message}</div>
+        )}
+        <div className="container ">
+          <h2 className="tab-section-title">
+            Welcome <span>back!</span>
+          </h2>
 
-                <Form>
-                    <FormGroup className={submitted && !username ? ' has-error' : ''}>
-                        <Label for="login-username" hidden>
-                            Username
-                        </Label>
-                        <div className="icon icon-user">
-                            <Input
-                                name="username"
-                                id="login-username"
-                                placeholder={
-                                    submitted && !username
-                                        ? 'Username is required'
-                                        : 'Username'
-                                }
-                                value={username}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <FormGroup className={submitted && !password ? ' has-error' : ''}>
-                        <Label for="login-password" hidden>
-                            Password
-                        </Label>
-                        <div className="icon icon-password">
-                            <Input
-                                type="password"
-                                name="password"
-                                id="login-password"
-                                placeholder={
-                                    submitted && !password
-                                        ? 'Password is required'
-                                        : 'Password'
-                                }
-                                value={password}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <Button className="hvr-icon-forward" onClick={this.handleSubmit}>
-                        Enter
-                    </Button>
-                </Form>
-            </div>
+          <Form>
+            <FormGroup className={submitted && !username ? ' has-error' : ''}>
+              <Label for="login-username" hidden>
+                Username
+              </Label>
+              <div className="icon icon-user">
+                <Input
+                  name="username"
+                  id="login-username"
+                  placeholder={
+                    submitted && !username ? 'Username is required' : 'Username'
+                  }
+                  value={username}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <FormGroup className={submitted && !password ? ' has-error' : ''}>
+              <Label for="login-password" hidden>
+                Password
+              </Label>
+              <div className="icon icon-password">
+                <Input
+                  type="password"
+                  name="password"
+                  id="login-password"
+                  placeholder={
+                    submitted && !password ? 'Password is required' : 'Password'
+                  }
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <Button className="hvr-icon-forward" onClick={this.handleSubmit}>
+              Enter
+            </Button>
+            {loggedIn && <Redirect to="/home" />}
+          </Form>
         </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
+  const { loggedIn } = state.authentication;
   const { alert } = state;
   return {
-    alert
+    alert,
+    loggedIn
   };
 };
 
