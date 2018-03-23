@@ -1,0 +1,59 @@
+@import '../../styles.scss';
+
+//colors
+$color-description: #9ca1b2;
+
+.wrapper {
+  display: flex;
+  max-width: 70%;
+}
+
+.progressbars {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  padding: 0 20px;
+
+  &-item {
+    width: 60px;
+    margin-right: 15px;
+
+    .CircularProgressbar-path {
+      transform-origin: center center;
+    }
+
+    &-color {
+      .CircularProgressbar-path {
+        stroke: $color-secondary;
+      }
+
+      .CircularProgressbar-trail {
+        stroke: rgba(156, 161, 178, 0.3);
+      }
+
+      .CircularProgressbar-text {
+        fill: $color-secondary;
+      }
+    }
+  }
+}
+
+.description {
+  color: $color-white;
+
+  p {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.44px;
+    line-height: 15px;
+  }
+
+  p:last-child {
+    color: $color-description;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+  }
+}

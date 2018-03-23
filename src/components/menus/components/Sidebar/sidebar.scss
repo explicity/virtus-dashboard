@@ -5,10 +5,11 @@ $color-link: #757da4;
 $color-hover: #97a9ba;
 
 .sidebar {
-  margin-top: 60px;
-  height: 100vh;
+  padding-top: 60px;
+  min-height: 100vh;
   width: 60px;
   background-color: $color-main;
+  box-shadow: 0 3px 30px rgba(158, 163, 180, 0.3);
 
   &.position-fixed {
     top: 0;

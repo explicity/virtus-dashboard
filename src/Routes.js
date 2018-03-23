@@ -21,7 +21,11 @@ const Routes = () => {
           user.online ? (
             <div>
               <Menus />
-              <Component {...props} />
+              <div className="main-layout">
+                <div className="container">
+                  <Component {...props} />
+                </div>
+              </div>
             </div>
           ) : (
             <Redirect to={{ pathname: '/', state: { from: props.location } }} />
