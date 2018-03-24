@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 
 import ReactHighcharts from 'react-highcharts';
 
-import { config } from './../../../../config/config';
-import CircularBars from '././../../../../components/bars/CircularBars';
-
-import './chartsSection.scss';
+import { config } from './../../../../../config/config';
+import CircularBars from './.././../../../../components/bars/CircularBars';
 
 export default class ChartsSection extends Component {
   render() {

@@ -1,0 +1,17 @@
+@import '../../../../../styles.scss';
+
+.charts {
+  background-color: $color-main;
+  padding-top: 15px;
+
+  &.charts-column {
+    padding: 25px;
+  }
+
+  &-title {
+    color: $color-white;
+    font-weight: 600;
+    letter-spacing: 0.36px;
+    font-size: 20px;
+  }
+}

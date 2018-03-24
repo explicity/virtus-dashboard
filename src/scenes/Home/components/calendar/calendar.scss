@@ -1,0 +1,46 @@
+@import '../../../../styles.scss';
+
+.calendar {
+  background-color: $color-main;
+  text-align: center;
+
+  .DayPicker {
+    width: 240px;
+
+    &-Month {
+      margin-top: 0;
+    }
+
+    &-Caption {
+      background-color: #3a3e52;
+      color: $color-white;
+      height: 50px;
+      padding-top: 10px;
+    }
+
+    &-Caption > div {
+      padding-left: 17px;
+      font-weight: 400;
+    }
+
+    &-NavButton {
+      margin-top: -2px;
+    }
+
+    &-Weekday {
+      color: #9ea3b4;
+    }
+
+    &-Day {
+      color: $color-white;
+
+      &--outside {
+        color: #9ea3b4;
+      }
+
+      &--today {
+        background-color: $color-secondary;
+      }
+    }
+  }
+}
