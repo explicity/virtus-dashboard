@@ -16,9 +16,18 @@ $color-header: #3a3e52;
     font-weight: 600;
     letter-spacing: 0.36px;
     font-size: 20px;
+
+    &-unreaded {
+      color: $color-secondary;
+    }
   }
 
   &-item {
     background-color: $color-main;
+
+    &.item-message {
+      max-height: 392px;
+      overflow-y: scroll;
+    }
   }
 }

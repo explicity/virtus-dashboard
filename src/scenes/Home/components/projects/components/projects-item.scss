@@ -1,0 +1,57 @@
+.inner-item {
+  &.item-project {
+    max-height: 423px;
+    overflow-y: scroll;
+  }
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &-title {
+    font-size: 14px;
+    color: $color-white;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+  }
+
+  &-secondary {
+    font-size: 12px;
+    color: $color-text;
+    letter-spacing: 0.28px;
+    font-weight: 400;
+
+    .fa {
+      font-size: 4px;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-secondary {
+    .btn {
+      border-color: transparent;
+
+      &:focus {
+        box-shadow: none;
+        color: $color-white;
+      }
+
+      &-secondary {
+        background-color: transparent;
+        color: $color-text;
+
+        &:not(:disabled):not(.disabled):active {
+          background-color: transparent;
+          border-color: transparent;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}

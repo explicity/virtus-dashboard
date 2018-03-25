@@ -5,7 +5,10 @@ $color-txt: #9ca1b2;
   padding: 15px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+
+  &.item-message {
+    cursor: pointer;
+  }
 
   &:not(:last-child) {
     border-bottom: 1px solid rgba(158, 163, 180, 0.3);
