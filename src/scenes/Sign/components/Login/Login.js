@@ -3,7 +3,6 @@ import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
 import { userActions } from '../../../../redux/actions/index.js';
-import { alertActions } from './../../../../redux/actions';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 

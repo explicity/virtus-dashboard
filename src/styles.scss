@@ -2,23 +2,14 @@
 @import '~font-awesome/css/font-awesome.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-// colors
-$color-main: #2f3242;
-$color-secondary: #2196f3;
-
-$color-bg: #2a2c3b;
-$color-white: #ffffff;
-$color-grey: #737ba2;
-
-// fonts
-$font-txt: Montserrat;
+@import './variables.scss';
 
 body,
 html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: $font-txt;
+  font-family: $font-txt, sans-serif;
 }
 
 img {

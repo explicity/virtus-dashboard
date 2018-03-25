@@ -24,7 +24,17 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: './src/variables.scss'
+            }
+          }
+        ]
       },
 
       {
@@ -34,7 +44,7 @@ module.exports = {
 
       {
         test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
+        use: 'url-loader?limit=100000'
       }
     ]
   },

@@ -1,11 +1,9 @@
-@import '../../../../../styles.scss';
-
 .charts {
   background-color: $color-main;
   padding-top: 15px;
 
   &.charts-column {
-    padding: 25px;
+    padding: 25px 25px 0;
   }
 
   &-title {

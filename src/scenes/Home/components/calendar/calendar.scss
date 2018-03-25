@@ -1,5 +1,3 @@
-@import '../../../../styles.scss';
-
 .calendar {
   background-color: $color-main;
   text-align: center;
@@ -19,7 +17,7 @@
     }
 
     &-Caption > div {
-      padding-left: 17px;
+      padding-left: 23px;
       font-weight: 400;
     }
 
