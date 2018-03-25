@@ -27,8 +27,8 @@ class ChartsSection extends Component {
 
     return (
       <div className="charts charts-column">
-        <div className="d-flex justify-content-between align-items-center mb-2">
-          <h3 className="charts-title">Sales Report</h3>
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h3 className="inner-title">Sales Report</h3>
           <MainDropdown data={selectOptions} />
         </div>
         <ReactHighcharts config={options} />

@@ -1,15 +1,9 @@
 .charts {
   background-color: $color-main;
   padding-top: 15px;
+  box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
 
   &.charts-column {
     padding: 25px 25px 0;
-  }
-
-  &-title {
-    color: $color-white;
-    font-weight: 600;
-    letter-spacing: 0.36px;
-    font-size: 20px;
   }
 }

@@ -1,44 +1,43 @@
 .calendar {
-  background-color: $color-main;
-  text-align: center;
+  box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
 
-  .DayPicker {
-    width: 240px;
+  .CalendarMonth {
+    background-color: $color-main;
+  }
 
-    &-Month {
-      margin-top: 0;
-    }
+  .DayPicker__horizontal {
+    background-color: $color-main;
+  }
 
-    &-Caption {
-      background-color: #3a3e52;
-      color: $color-white;
-      height: 50px;
-      padding-top: 10px;
-    }
+  .CalendarDay_container {
+    background-color: $color-main;
+    color: $color-white;
+    border: none;
+  }
 
-    &-Caption > div {
-      padding-left: 23px;
-      font-weight: 400;
-    }
+  .DayPicker_weekHeader {
+    color: $color-text;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
 
-    &-NavButton {
-      margin-top: -2px;
-    }
+  .CalendarMonthGrid {
+    background-color: $color-main;
+  }
 
-    &-Weekday {
-      color: #9ea3b4;
-    }
+  .CalendarMonth_caption {
+    color: $color-white;
+    font-size: 20px;
+    font-weight: 600;
+  }
 
-    &-Day {
-      color: $color-white;
+  .DayPickerNavigation_button__horizontal {
+    background-color: $color-main;
+    border-color: $color-main;
+  }
 
-      &--outside {
-        color: #9ea3b4;
-      }
-
-      &--today {
-        background-color: $color-secondary;
-      }
-    }
+  .CalendarDay__today {
+    background-color: $color-secondary;
+    border-radius: 50%;
   }
 }

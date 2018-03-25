@@ -26,7 +26,7 @@ const ProgressBarsItem = ({ info }) => (
 );
 
 const ProgressBars = () => (
-  <div className="wrapper">
+  <div className="bars">
     {_map(data, (item, index) => <ProgressBarsItem key={index} info={item} />)}
   </div>
 );

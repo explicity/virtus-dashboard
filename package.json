@@ -21,6 +21,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-circular-progressbar": "^0.8.0",
+    "react-dates": "^15.5.1",
     "react-day-picker": "^7.1.4",
     "react-dom": "^16.2.0",
     "react-highcharts": "^16.0.2",
