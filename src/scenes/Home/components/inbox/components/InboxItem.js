@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './inbox-item.scss';
 
-class InboxItem extends Component {
+export default class InboxItem extends Component {
   constructor(props) {
     super(props);
 
@@ -44,5 +44,3 @@ class InboxItem extends Component {
     );
   }
 }
-
-export default InboxItem;

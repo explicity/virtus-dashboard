@@ -2,8 +2,8 @@
 $color-description: #9ca1b2;
 
 .bars {
+  flex-wrap: wrap;
   display: flex;
-  max-width: 70%;
 }
 
 .progressbars {
@@ -12,6 +12,10 @@ $color-description: #9ca1b2;
   justify-content: flex-start;
   margin-bottom: 25px;
   padding: 0 20px;
+
+  @media (max-width: 994px) {
+    padding: 0 10px;
+  }
 
   &-item {
     width: 60px;

@@ -32,7 +32,7 @@ export default class Sidebar extends Component {
               to="/home"
               className={`sidebar-nav-link ${activeTab === 1 ? 'active ' : ''}`}
               onClick={() => {
-                this.toggle('1');
+                this.toggle(1);
               }}
             >
               <i className="fa fa-home fa-fw" aria-hidden="true" />
@@ -44,7 +44,7 @@ export default class Sidebar extends Component {
               to="/workflow"
               className={`sidebar-nav-link ${activeTab === 2 ? 'active ' : ''}`}
               onClick={() => {
-                this.toggle('2');
+                this.toggle(2);
               }}
             >
               <i className="fa fa-bars fa-fw" aria-hidden="true" />
@@ -56,7 +56,7 @@ export default class Sidebar extends Component {
               to="/raport"
               className={`sidebar-nav-link ${activeTab === 3 ? 'active ' : ''}`}
               onClick={() => {
-                this.toggle('3');
+                this.toggle(3);
               }}
             >
               <i className="fa fa-line-chart fa-fw" aria-hidden="true" />
@@ -68,7 +68,7 @@ export default class Sidebar extends Component {
               to="/inbox"
               className={`sidebar-nav-link ${activeTab === 4 ? 'active ' : ''}`}
               onClick={() => {
-                this.toggle('4');
+                this.toggle(4);
               }}
             >
               <i className="fa fa-envelope fa-fw" aria-hidden="true" />
@@ -80,7 +80,7 @@ export default class Sidebar extends Component {
               to="/users"
               className={`sidebar-nav-link ${activeTab === 5 ? 'active ' : ''}`}
               onClick={() => {
-                this.toggle('5');
+                this.toggle(5);
               }}
             >
               <i className="fa fa-users fa-fw" aria-hidden="true" />

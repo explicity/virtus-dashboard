@@ -22,16 +22,25 @@ export default class Calendar extends Component {
     const { startDate, endDate, focusedInput } = this.state;
     return (
       <div className="calendar">
-        <DayPickerRangeController
-          startDate={startDate}
-          endDate={endDate}
-          onDatesChange={({ startDate, endDate }) =>
-            this.setState({ startDate, endDate })
-          }
-          focusedInput={focusedInput}
-          onFocusChange={focusedInput => this.setState({ focusedInput })}
-        />
+        <div className="calendar-wrapper">
+          <DayPickerRangeController
+            startDate={startDate}
+            endDate={endDate}
+            onDatesChange={({ startDate, endDate }) =>
+              this.setState({ startDate, endDate })
+            }
+            focusedInput={focusedInput}
+            onFocusChange={focusedInput => this.setState({ focusedInput })}
+          />
+        </div>
       </div>
     );
   }
 }
+
+const defaultProps = {
+  numberOfMonths: 1,
+  monthFormat: 'MMMM YYYY'
+};
+
+Calendar.defaultProps = defaultProps;

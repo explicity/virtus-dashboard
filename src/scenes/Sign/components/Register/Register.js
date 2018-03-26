@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { userActions } from '../../../../redux/actions/index.js';
+import { userActions } from 'redux/actions/index.js';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -51,96 +51,94 @@ class RegisterPage extends Component {
   render() {
     const { user, submitted } = this.state;
     return (
-        <div className="tab-section">
-            <div className="container">
-                <Form>
-                    <FormGroup className={submitted && !user.email ? ' has-error' : ''}>
-                        <Label for="register-email" hidden>
-                            Email
-                        </Label>
-                        <div className="icon icon-mail">
-                            <Input
-                                type="email"
-                                name="email"
-                                id="register-email"
-                                placeholder={
-                                    submitted && !user.email
-                                        ? 'Email is required'
-                                        : 'Email'
-                                }
-                                value={user.email}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <FormGroup
-                        className={submitted && !user.username ? ' has-error' : ''}
-                    >
-                        <Label for="register-username" hidden>
-                            Username
-                        </Label>
-                        <div className="icon icon-user">
-                            <Input
-                                name="username"
-                                id="register-username"
-                                placeholder={
-                                    submitted && !user.username
-                                        ? 'Username is required'
-                                        : 'Username'
-                                }
-                                value={user.username}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <FormGroup
-                        className={submitted && !user.password ? ' has-error' : ''}
-                    >
-                        <Label for="register-password" hidden>
-                            Password
-                        </Label>
-                        <div className="icon icon-password">
-                            <Input
-                                type="password"
-                                name="password"
-                                id="register-password"
-                                placeholder={
-                                    submitted && !user.password
-                                        ? 'Password is required'
-                                        : 'Password'
-                                }
-                                value={user.password}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <FormGroup
-                        className={submitted && !user.number ? ' has-error' : ''}
-                    >
-                        <Label for="register-number" hidden>
-                            Phone number
-                        </Label>
-                        <div className="icon icon-phone">
-                            <Input
-                                type="tel"
-                                name="number"
-                                id="register-number"
-                                placeholder={
-                                    submitted && !user.number
-                                        ? 'Phone number is required'
-                                        : 'Phone number'
-                                }
-                                value={user.number}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </FormGroup>
-                    <Button className="hvr-icon-forward" onClick={this.handleSubmit}>
-                        Sign up
-                    </Button>
-                </Form>
-            </div>
+      <div className="tab-section">
+        <div className="container">
+          <Form>
+            <FormGroup className={submitted && !user.email ? ' has-error' : ''}>
+              <Label for="register-email" hidden>
+                Email
+              </Label>
+              <div className="icon icon-mail">
+                <Input
+                  type="email"
+                  name="email"
+                  id="register-email"
+                  placeholder={
+                    submitted && !user.email ? 'Email is required' : 'Email'
+                  }
+                  value={user.email}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <FormGroup
+              className={submitted && !user.username ? ' has-error' : ''}
+            >
+              <Label for="register-username" hidden>
+                Username
+              </Label>
+              <div className="icon icon-user">
+                <Input
+                  name="username"
+                  id="register-username"
+                  placeholder={
+                    submitted && !user.username
+                      ? 'Username is required'
+                      : 'Username'
+                  }
+                  value={user.username}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <FormGroup
+              className={submitted && !user.password ? ' has-error' : ''}
+            >
+              <Label for="register-password" hidden>
+                Password
+              </Label>
+              <div className="icon icon-password">
+                <Input
+                  type="password"
+                  name="password"
+                  id="register-password"
+                  placeholder={
+                    submitted && !user.password
+                      ? 'Password is required'
+                      : 'Password'
+                  }
+                  value={user.password}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <FormGroup
+              className={submitted && !user.number ? ' has-error' : ''}
+            >
+              <Label for="register-number" hidden>
+                Phone number
+              </Label>
+              <div className="icon icon-phone">
+                <Input
+                  type="tel"
+                  name="number"
+                  id="register-number"
+                  placeholder={
+                    submitted && !user.number
+                      ? 'Phone number is required'
+                      : 'Phone number'
+                  }
+                  value={user.number}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </FormGroup>
+            <Button className="hvr-icon-forward" onClick={this.handleSubmit}>
+              Sign up
+            </Button>
+          </Form>
         </div>
+      </div>
     );
   }
 }

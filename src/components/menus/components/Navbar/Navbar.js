@@ -3,14 +3,16 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Badge
+  DropdownItem
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
+import MediaQuery from 'react-responsive';
 
-import { userActions } from './../../../../redux/actions/index.js';
+import { userActions } from 'redux/actions/index.js';
+
+import Notifications from './components/Notifications';
 
 import Logo from './img/logo.png';
 import Avatar from './img/user.jpg';
@@ -54,39 +56,61 @@ class Navbar extends Component {
             <span className="sr-only">Virtus-logo</span>
           </Link>
 
-          <div className="navbar-main">
-            <a href=" " className="btn btn-primary">
-              <span>Add</span>
-              <i className="fa fa-plus" aria-hidden="true" />
-            </a>
-            <button className="navbar-main-btn">
-              <i className="fa fa-search" />
-              <span className="sr-only">Search</span>
-            </button>
-            <button className="navbar-main-btn">
-              <i className="fa fa-bell-o" aria-hidden="true" />
-              <Badge color="primary"> </Badge>
-              <span className="sr-only">Notifications</span>
-            </button>
+          <MediaQuery minDeviceWidth={580}>
+            <div className="navbar-main">
+              <a href=" " className="btn btn-primary">
+                <span>Add</span>
+                <i className="fa fa-plus" aria-hidden="true" />
+              </a>
+              <button className="navbar-main-btn">
+                <i className="fa fa-search" />
+                <span className="sr-only">Search</span>
+              </button>
+              <Notifications />
 
-            <Dropdown isOpen={dropdownOpen} toggle={this.toggle}>
-              <DropdownToggle
-                tag="span"
-                onClick={this.toggle}
-                data-toggle="dropdown"
-                aria-expanded={dropdownOpen}
-              >
-                <div className="avatar hvr-icon-down">
-                  <span className="sr-only">User</span>
-                  <img
-                    src={Avatar}
-                    alt="user-avatar"
-                    style={{ width: 35, height: 35 }}
-                    className="avatar-img"
-                  />
-                </div>
+              <Dropdown isOpen={dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle
+                  tag="span"
+                  onClick={this.toggle}
+                  data-toggle="dropdown"
+                  aria-expanded={dropdownOpen}
+                >
+                  <div className="avatar hvr-icon-down">
+                    <span className="sr-only">User</span>
+                    <img
+                      src={Avatar}
+                      alt="user-avatar"
+                      style={{ width: 35, height: 35 }}
+                      className="avatar-img"
+                    />
+                  </div>
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>
+                    <Link to="/settings">Settings</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/" onClick={this.clearStorage}>
+                      Log Out
+                    </Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          </MediaQuery>
+          <MediaQuery maxDeviceWidth={579}>
+            <Dropdown
+              isOpen={this.state.dropdownOpen}
+              toggle={this.toggle}
+              className="navbar-main-dropdown"
+            >
+              <DropdownToggle>
+                <i className="fa fa-bars" />
               </DropdownToggle>
               <DropdownMenu>
+                <DropdownItem>Add project</DropdownItem>
+                <DropdownItem>Search</DropdownItem>
+                <DropdownItem>Notifications</DropdownItem>
                 <DropdownItem>
                   <Link to="/settings">Settings</Link>
                 </DropdownItem>
@@ -97,7 +121,7 @@ class Navbar extends Component {
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-          </div>
+          </MediaQuery>
         </div>
       </header>
     );

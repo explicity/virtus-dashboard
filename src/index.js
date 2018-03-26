@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import Routes from './Routes';
 
 import store from './redux/store/index';
-
 import './styles.scss';
 
 const render = Component =>

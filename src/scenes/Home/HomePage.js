@@ -9,24 +9,26 @@ import Projects from './components/projects/Projects';
 export default class HomePage extends Component {
   render() {
     return (
-      <div className="mt-4">
-        <div className="row">
-          <div className="col-8 mb-4">
-            <LineChartSection />
+      <div className="container">
+        <div className="mt-4">
+          <div className="row mb-4">
+            <div className="col-12 col-md-8">
+              <LineChartSection />
+            </div>
+            <div className="col-12 col-md-4">
+              <Projects />
+            </div>
           </div>
-          <div className="col-4">
-            <Projects />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-6 mb-4">
-            <ColumnChart />
-          </div>
-          <div className="col-3 mb-4">
-            <Inbox />
-          </div>
-          <div className="col-3 mb-4">
-            <Calendar />
+          <div className="row">
+            <div className="col-12 col-lg-5 mb-4">
+              <ColumnChart />
+            </div>
+            <div className="col-12 col-md-6 col-lg-3 mb-4">
+              <Inbox />
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 mb-4">
+              <Calendar />
+            </div>
           </div>
         </div>
       </div>

@@ -37,5 +37,14 @@ export default [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
     time: 'Today, 5:32 PM',
     status: 'readed'
+  },
+
+  {
+    url: User1,
+    username: 'Michelle Stewart',
+    message:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
+    time: 'Today, 5:32 PM',
+    status: 'readed'
   }
 ];

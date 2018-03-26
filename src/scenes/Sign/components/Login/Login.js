@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
-import { userActions } from '../../../../redux/actions/index.js';
+import { userActions } from 'redux/actions/index.js';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 

@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import _map from 'lodash/map';
 
-import store from '../../redux/store';
+import store from 'redux/store';
 
 import './dropdown.scss';
 

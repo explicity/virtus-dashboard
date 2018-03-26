@@ -10,6 +10,7 @@ import { Redirect } from 'react-router';
 import Menus from './components/menus/Menus.js';
 import SignUp from './scenes/Sign/SignUp.js';
 import HomePage from './scenes/Home/HomePage.js';
+import Workflow from './scenes/Workflow/Workflow.js';
 
 const Routes = () => {
   const DefaultLayout = ({ component: Component }) => {
@@ -22,9 +23,7 @@ const Routes = () => {
             <div>
               <Menus />
               <div className="main-layout">
-                <div className="container">
-                  <Component {...props} />
-                </div>
+                <Component {...props} />
               </div>
             </div>
           ) : (
@@ -40,6 +39,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={SignUp} />
         <DefaultLayout path="/home" component={HomePage} />
+        <DefaultLayout path="/workflow" component={Workflow} />
       </Switch>
     </Router>
   );

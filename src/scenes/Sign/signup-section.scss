@@ -25,12 +25,18 @@ $color-inner: #f6f7fa;
       .brand {
         margin-left: 30px;
 
+        @media (max-width: 424px) {
+          margin-left: 20px;
+
+          .brand-logo {
+            width: 100px;
+            height: 17px;
+          }
+        }
+
         &-logo {
-          text-transform: uppercase;
-          color: $color-white;
-          font-weight: 300;
-          font-size: 25px;
-          letter-spacing: 3px;
+          width: 172px;
+          height: 29px;
         }
       }
     }
@@ -54,10 +60,9 @@ $color-inner: #f6f7fa;
         justify-content: center;
         width: 100%;
         color: $color-white !important;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
 
         &:hover {
           border: none;

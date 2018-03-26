@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import ReactHighcharts from 'react-highcharts';
 
-import MainDropdown from './../../../../../components/dropdown/MainDropdown';
-import { config } from './../../../../../config/config';
+import MainDropdown from 'components/dropdown/MainDropdown';
+import { config } from 'config/config';
 import data from './data.js';
 
 import './chartsSection.scss';

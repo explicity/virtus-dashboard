@@ -1,5 +1,16 @@
 .calendar {
+  width: inherit;
+  background-color: $color-main;
   box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
+
+  @media (max-width: 424px) {
+    overflow-x: scroll;
+  }
+
+  &-wrapper {
+    justify-content: center;
+    display: flex;
+  }
 
   .CalendarMonth {
     background-color: $color-main;
@@ -7,6 +18,10 @@
 
   .DayPicker__horizontal {
     background-color: $color-main;
+  }
+
+  .DayPicker__withBorder {
+    box-shadow: none !important;
   }
 
   .CalendarDay_container {

@@ -37,15 +37,6 @@
           border: none;
           outline: none;
         }
-
-        .badge {
-          position: absolute;
-          padding: 4px;
-          border-radius: 50%;
-          right: -1px;
-          top: -2px;
-          border: 2px solid $color-main;
-        }
       }
 
       .dropdown {
@@ -94,6 +85,37 @@
           font-size: 12px;
           transition: 0.3s;
           color: $color-secondary;
+        }
+      }
+
+      &-dropdown {
+        .badge {
+          position: absolute;
+          padding: 3.5px;
+          border-radius: 50%;
+          right: -1px;
+          top: -2px;
+          border: 2px solid $color-main;
+        }
+        .btn {
+          padding: 0;
+          background-color: transparent;
+          border: transparent;
+
+          &:focus {
+            box-shadow: none;
+          }
+
+          &-secondary {
+            &:not(:disabled):not(.disabled):active {
+              background-color: transparent;
+              border-color: transparent;
+
+              &:focus {
+                box-shadow: none;
+              }
+            }
+          }
         }
       }
     }

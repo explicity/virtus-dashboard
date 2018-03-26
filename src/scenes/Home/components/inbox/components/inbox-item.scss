@@ -5,6 +5,11 @@ $color-txt: #9ca1b2;
   padding: 15px;
   display: flex;
   align-items: center;
+  background-color: $color-main;
+
+  &:hover {
+    background-color: transparent;
+  }
 
   &.item-message {
     cursor: pointer;
