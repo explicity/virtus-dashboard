@@ -43,7 +43,7 @@ export default class ProjectsItem extends Component {
             <div className="project-secondary">
               <span className="mr-2">{item.company}</span>
               <i className="fa fa-circle" aria-hidden="true" />
-              <span className="ml-2">{item.price}</span>
+              <span className="ml-2">${item.price}</span>
             </div>
           </div>
           <Dropdown

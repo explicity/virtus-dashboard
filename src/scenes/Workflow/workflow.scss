@@ -9,6 +9,7 @@ $color-link: #2b2d3c;
       box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
       border-bottom: 1px solid $color-secondary;
       height: 60px;
+      flex-wrap: nowrap;
 
       .nav-item {
         margin-bottom: 0px;
