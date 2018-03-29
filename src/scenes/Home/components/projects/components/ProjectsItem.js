@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import _map from 'lodash/map';
+
 import {
   Dropdown,
   DropdownToggle,
@@ -8,6 +10,15 @@ import {
 } from 'reactstrap';
 
 import './projects-item.scss';
+
+const stage = [
+  'Quened',
+  'Planning',
+  'Design',
+  'Development',
+  'Testing',
+  'Completed'
+];
 
 export default class ProjectsItem extends Component {
   constructor(props) {
@@ -55,7 +66,22 @@ export default class ProjectsItem extends Component {
               <i className="fa fa-ellipsis-v" />
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem>
+                <div className="dropdown-submenu">
+                  <a className="dropdown-item" tabIndex="-1" href="#">
+                    Move to...
+                  </a>
+                  <ul className="dropdown-menu">
+                    {_map(stage, (item, index) => (
+                      <li className="dropdown-item" key={index}>
+                        <a tabindexndex="-1" href="#">
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>

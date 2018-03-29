@@ -89,6 +89,8 @@
       }
 
       &-dropdown {
+        position: relative !important;
+
         .badge {
           position: absolute;
           padding: 3.5px;

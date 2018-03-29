@@ -19,7 +19,7 @@ export default [
   {
     id: 1,
     title: 'Landing Page',
-    company: 'Symu.co',
+    company: 'Facebook',
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
@@ -59,7 +59,7 @@ export default [
   {
     id: 5,
     title: 'New website',
-    company: 'Symu.co',
+    company: 'Facebook',
     price: 1500,
     url: User,
     username: user.username,
@@ -69,7 +69,7 @@ export default [
   {
     id: 6,
     title: 'New website',
-    company: 'Symu.co',
+    company: 'Google',
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
@@ -79,7 +79,7 @@ export default [
   {
     id: 7,
     title: 'Dashboard',
-    company: 'Symu.co',
+    company: 'Facebook',
     price: 1500,
     url: User,
     username: user.username,
@@ -109,7 +109,7 @@ export default [
   {
     id: 10,
     title: 'Dashboard',
-    company: 'Symu.co',
+    company: 'Google',
     price: 1500,
     url: User3,
     username: 'Lyann Roach',
@@ -149,7 +149,7 @@ export default [
   {
     id: 14,
     title: 'Dashboard',
-    company: 'Symu.co',
+    company: 'Google',
     price: 1500,
     url: User2,
     username: 'Michelle Steward',

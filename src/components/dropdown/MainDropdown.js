@@ -24,6 +24,15 @@ class MainDropdown extends Component {
     };
   }
 
+  componentWillMount() {
+    store.dispatch({
+      type: 'SORT_STATUS',
+      payload: {
+        status: this.state.activeTab
+      }
+    });
+  }
+
   toggle(tab) {
     store.dispatch({
       type: 'SORT_STATUS',

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
 import _map from 'lodash/map';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -9,7 +10,7 @@ import data from './data';
 
 import './workflowDnD.scss';
 
-const status = [
+const stage = [
   'Quened',
   'Planning',
   'Design',
@@ -17,9 +18,8 @@ const status = [
   'Testing',
   'Completed'
 ];
-const lists = {};
 
-export default class WorkflowDnD extends Component {
+class WorkflowDnD extends Component {
   constructor(props) {
     super(props);
 
@@ -30,13 +30,31 @@ export default class WorkflowDnD extends Component {
   }
 
   componentWillMount() {
+    const list = {};
     _map(
-      status,
+      stage,
       (title, index) =>
-        (lists[title] = data.filter(item => item.status === title))
+        (list[title] = data.filter(item => item.status === title))
     );
     this.setState({
-      tasks: lists
+      tasks: list
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const list = {};
+    _map(
+      stage,
+      (title, index) =>
+        (list[title] = data.filter(
+          item =>
+            item.status === title &&
+            (item.company === nextProps.status || nextProps.status === 'All')
+        ))
+    );
+
+    this.setState({
+      tasks: list
     });
   }
 
@@ -47,9 +65,9 @@ export default class WorkflowDnD extends Component {
     const { tasks } = this.state;
     const [removed] = tasks[from.droppableId].splice(from.index, 1);
     if (from.droppableId === 'completed' && to.droppableId !== 'completed') {
-      removed.status = to.droppableId;
+      removed.stage = to.droppableId;
     }
-    if (to.droppableId === 'completed') removed.status = 'completed';
+    if (to.droppableId === 'completed') removed.stage = 'completed';
     tasks[to.droppableId].splice(to.index, 0, removed);
     this.setState({
       tasks
@@ -58,17 +76,19 @@ export default class WorkflowDnD extends Component {
     const index = to.index;
     const list = tasks[to.droppableId];
     const id = list[index].id;
-    data[id].status = result.destination.droppableId;
+    data[id].stage = result.destination.droppableId;
   }
 
   render() {
     const { tasks } = this.state;
+    const { status } = this.props;
+
     return (
       <div className="dnd">
         <div className="container">
           <DragDropContext onDragEnd={this.onDragEnd}>
             <div className="dnd-wrapper">
-              {_map(status, (title, titleIndex) => (
+              {_map(stage, (title, titleIndex) => (
                 <Droppable
                   direction="vertical"
                   droppableId={title}
@@ -134,3 +154,10 @@ export default class WorkflowDnD extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { status } = state.sort;
+  return { status };
+};
+
+export default connect(mapStateToProps)(WorkflowDnD);

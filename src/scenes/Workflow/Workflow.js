@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
+import MainDropdown from 'components/dropdown/MainDropdown';
+
 import WorkflowTabs from './components/WorkflowTabs';
+import data from './components/dnd/data';
 
 import './workflow.scss';
+
+const selectOptions = {
+  list: ['All', 'Symu.co', 'Facebook', 'Google'],
+  label: 'Show projects'
+};
 
 export default class Workflow extends Component {
   constructor(props) {
@@ -29,26 +37,29 @@ export default class Workflow extends Component {
     return (
       <div className="tabs">
         <Nav tabs>
-          <NavItem>
-            <NavLink
-              className={activeTab === '1' ? 'active' : ''}
-              onClick={() => {
-                this.toggle('1');
-              }}
-            >
-              All projects
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={activeTab === '2' ? 'active' : ''}
-              onClick={() => {
-                this.toggle('2');
-              }}
-            >
-              Workflow
-            </NavLink>
-          </NavItem>
+          <div className="d-flex">
+            <NavItem>
+              <NavLink
+                className={activeTab === '1' ? 'active' : ''}
+                onClick={() => {
+                  this.toggle('1');
+                }}
+              >
+                All projects ({data.length})
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={activeTab === '2' ? 'active' : ''}
+                onClick={() => {
+                  this.toggle('2');
+                }}
+              >
+                Workflow
+              </NavLink>
+            </NavItem>
+          </div>
+          <MainDropdown data={selectOptions} />
         </Nav>
         <WorkflowTabs activeTab={activeTab} />
       </div>

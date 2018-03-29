@@ -12,6 +12,7 @@
 
     &-toggle {
       width: 120px;
+      position: relative;
 
       &:after {
         position: absolute;
@@ -37,4 +38,9 @@
       }
     }
   }
+}
+
+.dropup,
+.dropdown {
+  position: static !important;
 }
