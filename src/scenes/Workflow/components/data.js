@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import User from './img/user.jpg';
 import User2 from './img/user2.png';
 import User3 from './img/user3.png';
@@ -13,7 +15,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Stewart',
-    status: 'Quened'
+    status: 'Quened',
+    duties: 'Account',
+    progress: 70,
+    deadline: moment('2018-06-12').format('D MMMM YYYY')
   },
 
   {
@@ -23,7 +28,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Planning'
+    status: 'Planning',
+    duties: 'Account',
+    progress: 30,
+    deadline: moment('2018-06-09').format('D MMMM YYYY')
   },
 
   {
@@ -33,7 +41,10 @@ export default [
     price: 1500,
     url: User3,
     username: 'Lyall Roach',
-    status: 'Planning'
+    status: 'Planning',
+    duties: 'Front End Dev',
+    progress: 70,
+    deadline: moment('2018-08-08').format('D MMMM YYYY')
   },
 
   {
@@ -43,7 +54,9 @@ export default [
     price: 1500,
     url: User,
     username: user.username,
-    status: 'Planning'
+    status: 'Planning',
+    progress: 15,
+    deadline: moment('2018-06-01').format('D MMMM YYYY')
   },
 
   {
@@ -53,7 +66,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Design'
+    status: 'Design',
+    duties: 'Account',
+    progress: 90,
+    deadline: moment('2018-04-22').format('D MMMM YYYY')
   },
 
   {
@@ -63,7 +79,9 @@ export default [
     price: 1500,
     url: User,
     username: user.username,
-    status: 'Design'
+    status: 'Design',
+    progress: 40,
+    deadline: moment('2018-09-30').format('D MMMM YYYY')
   },
 
   {
@@ -73,7 +91,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Design'
+    status: 'Design',
+    duties: 'Account',
+    progress: 100,
+    deadline: moment('2018-06-12').format('D MMMM YYYY')
   },
 
   {
@@ -83,7 +104,9 @@ export default [
     price: 1500,
     url: User,
     username: user.username,
-    status: 'Design'
+    status: 'Design',
+    progress: 0,
+    deadline: moment('2018-07-03').format('D MMMM YYYY')
   },
 
   {
@@ -93,7 +116,10 @@ export default [
     price: 1500,
     url: User3,
     username: 'Lyann Roach',
-    status: 'Development'
+    status: 'Development',
+    duties: 'Front End Dev',
+    progress: 30,
+    deadline: moment('2018-08-11').format('D MMMM YYYY')
   },
 
   {
@@ -103,7 +129,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Development'
+    status: 'Development',
+    duties: 'Account',
+    progress: 45,
+    deadline: moment('2018-12-01').format('D MMMM YYYY')
   },
 
   {
@@ -113,7 +142,10 @@ export default [
     price: 1500,
     url: User3,
     username: 'Lyann Roach',
-    status: 'Development'
+    status: 'Development',
+    duties: 'Front End Dev',
+    progress: 0,
+    deadline: moment('2018-05-27').format('D MMMM YYYY')
   },
 
   {
@@ -123,7 +155,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Testing'
+    status: 'Testing',
+    duties: 'Account',
+    progress: 90,
+    deadline: moment('2018-06-29').format('D MMMM YYYY')
   },
 
   {
@@ -133,7 +168,10 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Completed'
+    status: 'Completed',
+    duties: 'Account',
+    progress: 45,
+    deadline: moment('2018-04-12').format('D MMMM YYYY')
   },
 
   {
@@ -143,7 +181,10 @@ export default [
     price: 1500,
     url: User3,
     username: 'Lyann Roach',
-    status: 'Completed'
+    status: 'Completed',
+    duties: 'Front End Dev',
+    progress: 60,
+    deadline: moment('2018-07-31').format('D MMMM YYYY')
   },
 
   {
@@ -153,6 +194,9 @@ export default [
     price: 1500,
     url: User2,
     username: 'Michelle Steward',
-    status: 'Completed'
+    status: 'Completed',
+    duties: 'Account',
+    progress: 100,
+    deadline: moment('2018-06-05').format('D MMMM YYYY')
   }
 ];

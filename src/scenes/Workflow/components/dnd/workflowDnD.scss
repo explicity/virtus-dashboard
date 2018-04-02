@@ -1,6 +1,6 @@
 .dnd {
   overflow-x: scroll;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 125px);
   background-color: $color-bg;
 
   .container {
@@ -81,5 +81,9 @@
         transform: translateY(-50%);
       }
     }
+  }
+
+  &-list {
+    min-height: 100px;
   }
 }

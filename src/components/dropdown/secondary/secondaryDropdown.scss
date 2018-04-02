@@ -1,0 +1,30 @@
+.secondary-dropdown {
+  width: max-content;
+
+  .dropdown {
+    &-secondary {
+      .btn {
+        border-color: transparent;
+
+        &:focus {
+          box-shadow: none;
+          color: $color-white;
+        }
+
+        &-secondary {
+          background-color: transparent;
+          color: $color-text;
+
+          &:not(:disabled):not(.disabled):active {
+            background-color: transparent;
+            border-color: transparent;
+
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

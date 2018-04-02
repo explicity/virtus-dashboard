@@ -1,0 +1,41 @@
+$item-bg: #3a3e52;
+
+.dark-bg {
+  background-color: $color-bg;
+}
+
+.workflow-table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  color: $color-white;
+  font-size: 14px;
+
+  &.table {
+    margin-bottom: 0;
+
+    th {
+      border: none;
+      vertical-align: middle;
+    }
+
+    td {
+      vertical-align: middle;
+      border-top: none;
+      padding: 17px;
+    }
+
+    thead {
+      th {
+        border-bottom: none;
+        color: $color-text;
+        font-weight: 400;
+        letter-spacing: 0.32px;
+        padding-bottom: 0;
+      }
+    }
+
+    tbody {
+      background-color: $item-bg;
+    }
+  }
+}

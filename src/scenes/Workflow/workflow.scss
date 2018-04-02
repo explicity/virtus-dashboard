@@ -8,7 +8,7 @@ $color-link: #2b2d3c;
       background-color: $color-secondary;
       box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
       border-bottom: 1px solid $color-secondary;
-      height: 65px;
+      min-height: 65px;
       flex-wrap: nowrap;
       justify-content: space-between;
 

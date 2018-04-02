@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import _map from 'lodash/map';
 
 import ProjectsItem from './components/ProjectsItem';
-import data from 'scenes/Workflow/components/dnd/data';
+import data from 'scenes/Workflow/components/data';
 
 const Projects = () => {
   let user = JSON.parse(localStorage.getItem('userData'));

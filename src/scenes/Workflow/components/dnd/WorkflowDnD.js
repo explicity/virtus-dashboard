@@ -6,7 +6,7 @@ import _map from 'lodash/map';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import ProjectsItem from 'scenes/Home/components/projects/components/ProjectsItem';
-import data from './data';
+import data from './../data';
 
 import './workflowDnD.scss';
 
@@ -76,7 +76,7 @@ class WorkflowDnD extends Component {
     const index = to.index;
     const list = tasks[to.droppableId];
     const id = list[index].id;
-    data[id].stage = result.destination.droppableId;
+    data[id].status = result.destination.droppableId;
   }
 
   render() {
@@ -113,7 +113,7 @@ class WorkflowDnD extends Component {
                         </span>
                       </header>
 
-                      <ul ref={provided.innerRef}>
+                      <ul ref={provided.innerRef} className="dnd-list">
                         {_map(tasks[title], (item, index) => (
                           <Draggable
                             key={item.id}

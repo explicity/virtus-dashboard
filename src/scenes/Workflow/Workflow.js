@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
-import MainDropdown from 'components/dropdown/MainDropdown';
+import MainDropdown from 'components/dropdown/main/MainDropdown';
 
 import WorkflowTabs from './components/WorkflowTabs';
-import data from './components/dnd/data';
+import data from './components/data';
 
 import './workflow.scss';
 
@@ -20,7 +20,7 @@ export default class Workflow extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '2'
+      activeTab: '1'
     };
   }
 
