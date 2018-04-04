@@ -7,10 +7,11 @@ import {
 } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-import Menus from './components/menus/Menus.js';
-import SignUp from './scenes/Sign/SignUp.js';
-import HomePage from './scenes/Home/HomePage.js';
-import Workflow from './scenes/Workflow/Workflow.js';
+import Menus from './components/menus/Menus';
+import SignUp from './scenes/Sign/SignUp';
+import HomePage from './scenes/Home/HomePage';
+import Workflow from './scenes/Workflow/Workflow';
+import Raport from './scenes/Raport/Raport';
 
 const Routes = () => {
   const DefaultLayout = ({ component: Component }) => {
@@ -40,6 +41,7 @@ const Routes = () => {
         <Route exact path="/" component={SignUp} />
         <DefaultLayout path="/home" component={HomePage} />
         <DefaultLayout path="/workflow" component={Workflow} />
+        <DefaultLayout path="/raport" component={Raport} />
       </Switch>
     </Router>
   );

@@ -25,6 +25,7 @@ $item-bg: #3a3e52;
   }
 
   .deadline {
+    display: inline-block;
     &-secondary {
       color: $color-text;
       font-size: 12px;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
 import _map from 'lodash/map';
 
 import WorkflowProjectsItem from './components/WorkflowProjectsItem';
@@ -10,6 +11,7 @@ import workflowProjects from './workflowProjects.scss';
 
 class WorkflowProjects extends Component {
   render() {
+    const { status } = this.props;
     return (
       <div className="dark-bg">
         <div className="container">
@@ -22,14 +24,19 @@ class WorkflowProjects extends Component {
                   <th scope="col">Deadline</th>
                   <th scope="col">Time spent</th>
                   <th scope="col">Progress</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Assigned to</th>
                   <th />
                 </tr>
               </thead>
               <tbody>
-                {_map(data, (item, index) => (
-                  <WorkflowProjectsItem key={index} user={item} />
-                ))}
+                {_map(
+                  data,
+                  (item, index) =>
+                    (item.company === status || status === 'All') && (
+                      <WorkflowProjectsItem key={index} user={item} />
+                    )
+                )}
               </tbody>
             </table>
           </div>
@@ -39,4 +46,9 @@ class WorkflowProjects extends Component {
   }
 }
 
-export default WorkflowProjects;
+const mapStateToProps = state => {
+  const { status } = state.sort;
+  return { status };
+};
+
+export default connect(mapStateToProps)(WorkflowProjects);

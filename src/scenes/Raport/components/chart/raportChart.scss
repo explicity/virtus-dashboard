@@ -1,0 +1,21 @@
+$chart-bg: #2b2d3c;
+
+.raport {
+  .wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  &-chart {
+    background-color: $chart-bg;
+    padding-top: 20px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      margin-bottom: 10px;
+    }
+  }
+}

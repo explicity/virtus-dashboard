@@ -1,0 +1,41 @@
+$table-bg: #3a3e52;
+$table-text: #9ca1b2;
+
+.raport {
+  &-table {
+    padding-bottom: 20px;
+
+    .ReactTable {
+      .rt-thead {
+        &.-header {
+          box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+          background-color: $table-bg;
+        }
+        .rt-th {
+          padding: 20px 5px;
+        }
+
+        .rt-resizable-header-content {
+          color: $table-text;
+          font-size: 14px;
+          letter-spacing: 0.32px;
+          font-weight: 400;
+        }
+      }
+
+      .rt-tbody {
+        .rt-td {
+          font-size: 14px;
+          letter-spacing: 0.32px;
+          color: $color-white;
+          font-weight: 400;
+          padding: 15px 5px 15px 20px;
+        }
+
+        .rt-tr-group {
+          border-bottom: 1px solid rgba(156, 161, 178, 0.3);
+        }
+      }
+    }
+  }
+}

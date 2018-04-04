@@ -40,6 +40,8 @@ export default class WorkflowProjectsItem extends Component {
             </p>
           </div>
         </td>
+        <td>{user.spent}</td>
+
         <td>
           <div>
             <span>{user.progress}%</span>

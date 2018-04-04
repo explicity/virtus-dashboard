@@ -7,7 +7,7 @@ const lineConfig = {
     text: null
   },
   xAxis: {
-    categories: ['MON', 'TUE', 'WED', 'THU', 'FRI'],
+    categories: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
     gridLineWidth: 1,
     gridLineColor: '#53555E',
     lineWidth: 0,
@@ -94,4 +94,46 @@ const columnConfig = {
     enabled: false
   }
 };
-export const config = { lineConfig, columnConfig };
+
+const lineSecondaryConfig = {
+  chart: {
+    type: 'areaspline',
+    backgroundColor: '#2b2d3c'
+  },
+  title: {
+    text: null
+  },
+  xAxis: {
+    categories: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+    gridLineWidth: 1,
+    gridLineColor: '#53555E',
+    lineWidth: 0,
+    min: 0.5,
+    max: 5.5,
+    tickLength: 0,
+
+    labels: {
+      style: {
+        color: '#9ca1b2',
+        fontSize: '13px'
+      }
+    }
+  },
+  yAxis: {
+    visible: false
+  },
+
+  tooltip: {
+    enabled: false
+  },
+  credits: {
+    enabled: false
+  },
+  plotOptions: {
+    areaspline: {
+      fillOpacity: 0.5
+    }
+  }
+};
+
+export const config = { lineConfig, lineSecondaryConfig, columnConfig };
