@@ -16,6 +16,17 @@ $chart-bg: #2b2d3c;
       align-items: center;
       padding: 0 30px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
+
+      .bars {
+        @media (max-width: 730px) {
+          margin-bottom: 10px;
+
+          .progressbars {
+            margin-bottom: 5px;
+          }
+        }
+      }
     }
   }
 }

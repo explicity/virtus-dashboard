@@ -4,12 +4,11 @@ $color-link: #2b2d3c;
 .tabs {
   .nav {
     &-tabs {
-      padding: 0 15px 0 15px;
+      padding: 15px 30px;
       background-color: $color-secondary;
       box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
       border-bottom: 1px solid $color-secondary;
       min-height: 65px;
-      flex-wrap: nowrap;
       justify-content: space-between;
 
       .nav-item {
@@ -25,6 +24,12 @@ $color-link: #2b2d3c;
         font-weight: 600;
         letter-spacing: 0.36px;
         font-size: 14px;
+        white-space: nowrap;
+        padding-left: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
 
         &.active {
           background-color: transparent;
@@ -35,6 +40,9 @@ $color-link: #2b2d3c;
   }
 
   .dropdown {
+    &-main {
+      padding-left: 5px;
+    }
     &-label {
       color: $color-white;
     }

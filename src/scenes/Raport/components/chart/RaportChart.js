@@ -29,7 +29,7 @@ class RaportChart extends Component {
     return (
       <div className="raport-chart">
         <div className="raport-chart-header">
-          <CircularBars />
+          <CircularBars className="mb-1" />
           <MainDropdown data={selectOptions} />
         </div>
         <ReactHighcharts config={options} />
