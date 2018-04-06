@@ -12,6 +12,8 @@ export const alert = (state = {}, action) => {
         type: 'alert-danger',
         message: action.message
       };
+    case alertConstants.CLEAR:
+      return {};
     default:
       return state;
   }

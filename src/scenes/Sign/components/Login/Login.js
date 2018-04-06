@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
-import { userActions } from 'redux/actions/index.js';
+import { userActions, alertActions } from 'redux/actions/index.js';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -23,6 +23,7 @@ class LoginPage extends Component {
   componentWillMount() {
     const { dispatch } = this.props;
     dispatch(userActions.logout());
+    dispatch(alertActions.clear());
   }
 
   handleChange(event) {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router';
-import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import { userActions } from 'redux/actions/index.js';

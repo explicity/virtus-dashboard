@@ -12,6 +12,8 @@ export const authentication = (state = {}, action) => {
       };
     case userConstants.LOGOUT:
       return {};
+    case userConstants.DELETE:
+      return {};
     default:
       return state;
   }

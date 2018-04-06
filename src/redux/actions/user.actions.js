@@ -42,8 +42,31 @@ function logout() {
   }
 }
 
+function update(username, email) {
+  return dispatch => {
+    const user = JSON.parse(localStorage.getItem('userData'));
+    user.email = email;
+    user.username = username;
+    localStorage.userData = JSON.stringify(user);
+    dispatch(alertActions.success('Changes were saved'));
+  };
+}
+
+function deleteUser() {
+  return dispatch => {
+    localStorage.removeItem('userData');
+    dispatch(request());
+
+    function request() {
+      return { type: userConstants.DELETE };
+    }
+  };
+}
+
 export const userActions = {
   login,
   register,
-  logout
+  logout,
+  deleteUser,
+  update
 };
