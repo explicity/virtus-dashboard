@@ -16,12 +16,12 @@ import Settings from './scenes/Settings/Settings';
 
 const Routes = () => {
   const DefaultLayout = ({ component: Component }) => {
-    let user = JSON.parse(localStorage.getItem('userData')) || {};
+    const user = JSON.parse(localStorage.getItem('userData')) || {};
 
     return (
       <Route
         render={props =>
-          user.online ? (
+          (user.online ? (
             <div>
               <Menus />
               <div className="main-layout">
@@ -30,7 +30,7 @@ const Routes = () => {
             </div>
           ) : (
             <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-          )
+          ))
         }
       />
     );

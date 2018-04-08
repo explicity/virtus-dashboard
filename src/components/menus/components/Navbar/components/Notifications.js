@@ -49,7 +49,7 @@ export default class Notifications extends Component {
       >
         <DropdownToggle>
           <i className="fa fa-bell-o" aria-hidden="true" />
-          {showBadge && <Badge color="primary"> </Badge>}
+          {showBadge && <Badge color="primary" />}
           <span className="sr-only">Notifications</span>{' '}
         </DropdownToggle>
         <DropdownMenu>

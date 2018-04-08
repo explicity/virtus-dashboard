@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -129,3 +131,7 @@ class Navbar extends Component {
 }
 
 export default connect()(Navbar);
+
+Navbar.propTypes = {
+  dispatch: PropTypes.func
+};

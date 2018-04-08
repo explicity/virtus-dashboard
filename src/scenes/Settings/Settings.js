@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
 import { alertActions } from 'redux/actions/index.js';
@@ -15,15 +17,16 @@ class Settings extends Component {
   }
 
   render() {
-    const { alert } = this.props;
+    const { alert, updated } = this.props;
 
     return (
       <div className="container pt-3 pb-3">
         <div className="section-header">
           <h2 className="section-header-title">Settings</h2>
-          {alert.message && (
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
-          )}
+          {alert.message &&
+            updated && (
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
+            )}
         </div>
         <AccountSettings />
         <SecuritySettings />
@@ -33,10 +36,18 @@ class Settings extends Component {
 }
 
 const mapStateToProps = state => {
+  const { updated } = state.authentication;
   const { alert } = state;
   return {
-    alert
+    alert,
+    updated
   };
 };
 
 export default connect(mapStateToProps)(Settings);
+
+Settings.propTypes = {
+  alert: PropTypes.object,
+  dispatch: PropTypes.func,
+  updated: PropTypes.bool
+};

@@ -7,14 +7,11 @@ import Routes from './Routes';
 import store from './redux/store/index';
 import './styles.scss';
 
-const render = Component =>
-  ReactDOM.render(
-    <Provider store={store}>
-      <Component />
-    </Provider>,
-    document.getElementById('root')
-  );
-
-render(Routes);
+ReactDOM.render(
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
+  document.getElementById('root')
+);
 
 module.hot.accept();

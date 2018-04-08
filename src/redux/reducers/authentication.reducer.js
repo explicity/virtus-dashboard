@@ -1,6 +1,6 @@
 import { userConstants } from './../constants';
 
-let user = JSON.parse(localStorage.getItem('userData'));
+const user = JSON.parse(localStorage.getItem('userData'));
 const initialState = user ? { loggedIn: true, user } : {};
 
 export const authentication = (state = {}, action) => {
@@ -14,6 +14,10 @@ export const authentication = (state = {}, action) => {
       return {};
     case userConstants.DELETE:
       return {};
+    case userConstants.UPDATE_DATA:
+      return {
+        updated: true
+      };
     default:
       return state;
   }

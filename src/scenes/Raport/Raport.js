@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import RaportChart from './components/chart/RaportChart';
 import RaportTable from './components/table/RaportTable';
 
-export default class ChartsSection extends Component {
-  render() {
-    return (
-      <div className="raport">
-        <div className="wrapper">
-          <RaportChart />
-          <RaportTable />
-        </div>
+const ChartsSection = () => {
+  return (
+    <div className="raport">
+      <div className="wrapper">
+        <RaportChart />
+        <RaportTable />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ChartsSection;

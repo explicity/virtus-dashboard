@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
-import { userActions, alertActions } from 'redux/actions/index.js';
+import { userActions } from 'redux/actions/index.js';
 
 import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
 
@@ -11,9 +13,10 @@ class AccountSettings extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.showPassword = this.showPassword.bind(this);
     this.state = {
       username: '',
-      email: '',
+      password: '',
       submitted: false
     };
   }
@@ -23,7 +26,7 @@ class AccountSettings extends Component {
 
     this.setState({
       username: user.username,
-      email: user.email
+      password: user.password
     });
   }
 
@@ -36,15 +39,25 @@ class AccountSettings extends Component {
     event.preventDefault();
 
     this.setState({ submitted: true });
-    const { username, email } = this.state;
+    const { username, password } = this.state;
     const { dispatch } = this.props;
-    if (username && email) {
-      dispatch(userActions.update(username, email));
+    if (username && password) {
+      dispatch(userActions.update(username, password));
+    }
+  }
+
+  showPassword() {
+    let input = document.getElementById('user-password');
+
+    if (input.type === 'password') {
+      input.type = 'text';
+    } else {
+      input.type = 'password';
     }
   }
 
   render() {
-    const { username, email, submitted } = this.state;
+    const { username, password, submitted } = this.state;
     return (
       <div className="settings">
         <div className="settings-header">
@@ -53,23 +66,6 @@ class AccountSettings extends Component {
         </div>
         <div className="settings-main">
           <Form>
-            <FormGroup row>
-              <Label for="user-email" sm={4}>
-                Email
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="email"
-                  name="email"
-                  id="user-email"
-                  placeholder={
-                    submitted && !email ? 'Email is required' : 'Email'
-                  }
-                  value={email}
-                  onChange={this.handleChange}
-                />
-              </Col>
-            </FormGroup>
             <FormGroup row>
               <Label for="username" sm={4}>
                 Username
@@ -87,6 +83,29 @@ class AccountSettings extends Component {
               </Col>
             </FormGroup>
             <FormGroup row>
+              <Label for="user-password" sm={4}>
+                Password
+              </Label>
+              <Col sm={8}>
+                <Input
+                  type="password"
+                  name="password"
+                  id="user-password"
+                  placeholder={
+                    submitted && !password ? 'Password is required' : 'Password'
+                  }
+                  value={password}
+                  onChange={this.handleChange}
+                />
+                <FormGroup check>
+                  <Label check>
+                    <Input type="checkbox" onClick={this.showPassword} />Show
+                    password
+                  </Label>
+                </FormGroup>
+              </Col>
+            </FormGroup>
+            <FormGroup row>
               <Label for="languageSelect" sm={4}>
                 Language
               </Label>
@@ -98,6 +117,7 @@ class AccountSettings extends Component {
                 </Input>
               </Col>
             </FormGroup>
+
             <div className="col-12 col-sm-8 offset-sm-4 settings-main-btn">
               <button className="btn btn-secondary" onClick={this.handleSubmit}>
                 Save changes
@@ -111,3 +131,7 @@ class AccountSettings extends Component {
 }
 
 export default connect()(AccountSettings);
+
+AccountSettings.propTypes = {
+  dispatch: PropTypes.func
+};

@@ -6,7 +6,7 @@ import { userActions } from 'redux/actions/index.js';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class RegisterPage extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -143,9 +143,9 @@ class RegisterPage extends Component {
   }
 }
 
-const Register = connect()(RegisterPage);
-export default Register;
+export default connect()(Register);
 
 Register.propTypes = {
-  update: PropTypes.func
+  update: PropTypes.func,
+  dispatch: PropTypes.func
 };

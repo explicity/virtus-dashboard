@@ -31,7 +31,7 @@ class SecondaryDropdown extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle(tab) {
+  toggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });

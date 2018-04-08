@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
 import {
@@ -79,3 +81,10 @@ class MainDropdown extends Component {
 }
 
 export default connect()(MainDropdown);
+
+MainDropdown.propTypes = {
+  data: PropTypes.shape({
+    list: PropTypes.array,
+    label: PropTypes.string
+  })
+};

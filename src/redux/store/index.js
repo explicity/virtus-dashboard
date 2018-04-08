@@ -5,7 +5,7 @@ import promise from 'redux-promise-middleware';
 
 import rootReducer from './../reducers';
 
-const logger = store => next => action => {
+const logger = store => next => (action) => {
   next(action);
 };
 

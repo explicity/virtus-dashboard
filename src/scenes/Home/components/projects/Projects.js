@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 
 import _map from 'lodash/map';
 
-import ProjectsItem from './components/ProjectsItem';
 import data from 'scenes/Workflow/components/data';
+import ProjectsItem from './components/ProjectsItem';
 
 const Projects = () => {
-  let user = JSON.parse(localStorage.getItem('userData'));
-  const userData = data.filter(item => item.username === user.username);
+  const user = JSON.parse(localStorage.getItem('userData'));
+  const userData = data.filter(item => item.email === user.email);
   return (
     <div className="inner">
       <header className="inner-header">

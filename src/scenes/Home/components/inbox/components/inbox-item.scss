@@ -8,7 +8,7 @@ $color-txt: #9ca1b2;
   background-color: $color-main;
 
   &:hover {
-    background-color: transparent;
+    background-color: rgba(47, 50, 66, 0.55);
   }
 
   &.item-message {

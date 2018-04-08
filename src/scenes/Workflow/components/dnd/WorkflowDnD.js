@@ -33,8 +33,7 @@ class WorkflowDnD extends Component {
     const list = {};
     _map(
       stage,
-      (title, index) =>
-        (list[title] = data.filter(item => item.status === title))
+      title => (list[title] = data.filter(item => item.status === title))
     );
     this.setState({
       tasks: list
@@ -45,7 +44,7 @@ class WorkflowDnD extends Component {
     const list = {};
     _map(
       stage,
-      (title, index) =>
+      title =>
         (list[title] = data.filter(
           item =>
             item.status === title &&
@@ -73,15 +72,14 @@ class WorkflowDnD extends Component {
       tasks
     });
 
-    const index = to.index;
+    const { index } = to;
     const list = tasks[to.droppableId];
-    const id = list[index].id;
+    const { id } = list[index];
     data[id].status = result.destination.droppableId;
   }
 
   render() {
     const { tasks } = this.state;
-    const { status } = this.props;
 
     return (
       <div className="dnd">
@@ -94,7 +92,7 @@ class WorkflowDnD extends Component {
                   droppableId={title}
                   key={titleIndex}
                 >
-                  {provided => (
+                  {ref => (
                     <div className="dnd-col">
                       <header className="dnd-col-heading hvr-icon-forward">
                         <h4>
@@ -113,7 +111,7 @@ class WorkflowDnD extends Component {
                         </span>
                       </header>
 
-                      <ul ref={provided.innerRef} className="dnd-list">
+                      <ul ref={ref.innerRef} className="dnd-list">
                         {_map(tasks[title], (item, index) => (
                           <Draggable
                             key={item.id}
@@ -141,7 +139,7 @@ class WorkflowDnD extends Component {
                           </Draggable>
                         ))}
 
-                        {provided.placeholder}
+                        {ref.placeholder}
                       </ul>
                     </div>
                   )}
@@ -155,7 +153,7 @@ class WorkflowDnD extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { status } = state.sort;
   return { status };
 };

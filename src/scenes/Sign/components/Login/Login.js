@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
@@ -6,7 +8,7 @@ import { userActions, alertActions } from 'redux/actions/index.js';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class LoginPage extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -100,7 +102,7 @@ class LoginPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { loggedIn } = state.authentication;
   const { alert } = state;
   return {
@@ -109,5 +111,10 @@ const mapStateToProps = state => {
   };
 };
 
-const Login = connect(mapStateToProps)(LoginPage);
-export default Login;
+export default connect(mapStateToProps)(Login);
+
+Login.propTypes = {
+  alert: PropTypes.object,
+  dispatch: PropTypes.func,
+  loggedIn: PropTypes.bool
+};

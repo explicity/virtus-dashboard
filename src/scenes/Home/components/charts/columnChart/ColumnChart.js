@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
 import ReactHighcharts from 'react-highcharts';
@@ -14,32 +16,32 @@ const selectOptions = {
   label: 'Show'
 };
 
-class ChartsSection extends Component {
-  render() {
-    const { status } = this.props;
-    let options = Object.assign(config.columnConfig, data.dataYear);
+const ChartsSection = ({ status }) => {
+  let options = Object.assign(config.columnConfig, data.dataYear);
 
-    if (status === 'Year') {
-      options = Object.assign(config.columnConfig, data.dataYear);
-    } else if (status === 'Month') {
-      options = Object.assign(config.columnConfig, data.dataMonth);
-    }
-
-    return (
-      <div className="charts charts-column">
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h3 className="inner-title">Sales Report</h3>
-          <MainDropdown data={selectOptions} />
-        </div>
-        <ReactHighcharts config={options} />
-      </div>
-    );
+  if (status === 'Year') {
+    options = Object.assign(config.columnConfig, data.dataYear);
+  } else if (status === 'Month') {
+    options = Object.assign(config.columnConfig, data.dataMonth);
   }
-}
+  return (
+    <div className="charts charts-column">
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h3 className="inner-title">Sales Report</h3>
+        <MainDropdown data={selectOptions} />
+      </div>
+      <ReactHighcharts config={options} />
+    </div>
+  );
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { status } = state.sort;
   return { status };
 };
 
 export default connect(mapStateToProps)(ChartsSection);
+
+ChartsSection.propTypes = {
+  status: PropTypes.string
+};

@@ -11,7 +11,7 @@ import './workflow.scss';
 
 const selectOptions = {
   list: ['All', 'Symu.co', 'Facebook', 'Google'],
-  label: 'Show projects'
+  label: 'Show projects',
 };
 
 export default class Workflow extends Component {
@@ -20,14 +20,14 @@ export default class Workflow extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '2'
+      activeTab: '2',
     };
   }
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
+        activeTab: tab,
       });
     }
   }

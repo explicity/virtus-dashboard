@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import ReactHighcharts from 'react-highcharts';
@@ -15,30 +15,27 @@ const selectOptions = {
   label: 'Show'
 };
 
-class RaportChart extends Component {
-  render() {
-    const { status } = this.props;
-    let options = Object.assign(data.dataWeek, config.lineSecondaryConfig);
+const RaportChart = ({ status }) => {
+  let options = Object.assign(data.dataWeek, config.lineSecondaryConfig);
 
-    if (status === 'Week') {
-      options = Object.assign(data.dataWeek, config.lineSecondaryConfig);
-    } else if (status === 'Month') {
-      options = Object.assign(data.dataMonth, config.lineSecondaryConfig);
-    }
-
-    return (
-      <div className="raport-chart">
-        <div className="raport-chart-header">
-          <CircularBars className="mb-1" />
-          <MainDropdown data={selectOptions} />
-        </div>
-        <ReactHighcharts config={options} />
-      </div>
-    );
+  if (status === 'Week') {
+    options = Object.assign(data.dataWeek, config.lineSecondaryConfig);
+  } else if (status === 'Month') {
+    options = Object.assign(data.dataMonth, config.lineSecondaryConfig);
   }
-}
 
-const mapStateToProps = state => {
+  return (
+    <div className="raport-chart">
+      <div className="raport-chart-header">
+        <CircularBars />
+        <MainDropdown data={selectOptions} />
+      </div>
+      <ReactHighcharts config={options} />
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
   const { status } = state.sort;
   return { status };
 };
