@@ -29,6 +29,7 @@ class Navbar extends Component {
     };
 
     this.toggle = this.toggle.bind(this);
+    this.toggleTab = this.toggleTab.bind(this);
     this.clearStorage = this.clearStorage.bind(this);
   }
 
@@ -36,6 +37,11 @@ class Navbar extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
+  }
+
+  toggleTab() {
+    const { dispatch } = this.props;
+    dispatch(userActions.currentPage('0'));
   }
 
   clearStorage() {
@@ -89,7 +95,9 @@ class Navbar extends Component {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem>
-                    <Link to="/settings">Settings</Link>
+                    <Link to="/settings" onClick={this.toggleTab}>
+                      Settings
+                    </Link>
                   </DropdownItem>
                   <DropdownItem>
                     <Link to="/" onClick={this.clearStorage}>
@@ -114,7 +122,9 @@ class Navbar extends Component {
                 <DropdownItem>Search</DropdownItem>
                 <DropdownItem>Notifications</DropdownItem>
                 <DropdownItem>
-                  <Link to="/settings">Settings</Link>
+                  <Link to="/settings" onClick={this.toggleTab}>
+                    Settings
+                  </Link>
                 </DropdownItem>
                 <DropdownItem>
                   <Link to="/" onClick={this.clearStorage}>

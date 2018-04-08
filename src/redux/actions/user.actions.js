@@ -1,6 +1,10 @@
 import { userConstants } from './../constants/user.constants';
 import { alertActions } from './alert.actions';
 
+function currentPage(page) {
+  return { type: userConstants.CURRENT_PAGE, page };
+}
+
 function register(user) {
   return dispatch => {
     user.online = false;
@@ -20,6 +24,7 @@ function login(username, password) {
       user.online = true;
       localStorage.userData = JSON.stringify(user);
       dispatch(success(user));
+      dispatch(userActions.currentPage('1'));
     } else {
       dispatch(alertActions.error('Uncorrect username or password'));
     }
@@ -42,7 +47,7 @@ function logout() {
 function update(username, email) {
   return dispatch => {
     function success() {
-      return { type: userConstants.UPDATE_DATA  };
+      return { type: userConstants.UPDATE_DATA };
     }
 
     const user = JSON.parse(localStorage.getItem('userData'));
@@ -50,7 +55,7 @@ function update(username, email) {
     user.username = username;
     localStorage.userData = JSON.stringify(user);
     dispatch(alertActions.success('Changes were saved'));
-    dispatch(success())
+    dispatch(success());
   };
 }
 
@@ -70,5 +75,6 @@ export const userActions = {
   register,
   logout,
   deleteUser,
-  update
+  update,
+  currentPage
 };

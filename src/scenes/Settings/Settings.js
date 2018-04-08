@@ -12,6 +12,7 @@ import './Settings.scss';
 
 class Settings extends Component {
   conmponentWillMount() {
+    localStorage.currentPage = '0';
     const { dispatch } = this.props;
     dispatch(alertActions.clear());
   }

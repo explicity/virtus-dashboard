@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { userActions } from 'redux/actions/index.js';
 
 import './sidebar.scss';
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeTab: 1
+      activeTab: this.props.page
     };
 
     this.toggle = this.toggle.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      activeTab: nextProps.page
+    });
   }
 
   toggle(tab) {
@@ -19,20 +29,26 @@ export default class Sidebar extends Component {
       this.setState({
         activeTab: tab
       });
+
+      const { dispatch } = this.props;
+      dispatch(userActions.currentPage(tab));
     }
   }
 
   render() {
     const { activeTab } = this.state;
+
     return (
       <aside className="sidebar position-fixed">
         <ul className="sidebar-nav">
           <li className="sidebar-nav-item">
             <Link
               to="/home"
-              className={`sidebar-nav-link ${activeTab === 1 ? 'active ' : ''}`}
+              className={`sidebar-nav-link ${
+                activeTab === '1' ? 'active ' : ''
+              }`}
               onClick={() => {
-                this.toggle(1);
+                this.toggle('1');
               }}
             >
               <i className="fa fa-home fa-fw" aria-hidden="true" />
@@ -42,9 +58,11 @@ export default class Sidebar extends Component {
           <li className="sidebar-nav-item">
             <Link
               to="/workflow"
-              className={`sidebar-nav-link ${activeTab === 2 ? 'active ' : ''}`}
+              className={`sidebar-nav-link ${
+                activeTab === '2' ? 'active ' : ''
+              }`}
               onClick={() => {
-                this.toggle(2);
+                this.toggle('2');
               }}
             >
               <i className="fa fa-bars fa-fw" aria-hidden="true" />
@@ -54,9 +72,11 @@ export default class Sidebar extends Component {
           <li className="sidebar-nav-item">
             <Link
               to="/raport"
-              className={`sidebar-nav-link ${activeTab === 3 ? 'active ' : ''}`}
+              className={`sidebar-nav-link ${
+                activeTab === '3' ? 'active ' : ''
+              }`}
               onClick={() => {
-                this.toggle(3);
+                this.toggle('3');
               }}
             >
               <i className="fa fa-line-chart fa-fw" aria-hidden="true" />
@@ -66,9 +86,11 @@ export default class Sidebar extends Component {
           <li className="sidebar-nav-item">
             <Link
               to="/inbox"
-              className={`sidebar-nav-link ${activeTab === 4 ? 'active ' : ''}`}
+              className={`sidebar-nav-link ${
+                activeTab === '4' ? 'active ' : ''
+              }`}
               onClick={() => {
-                this.toggle(4);
+                this.toggle('4');
               }}
             >
               <i className="fa fa-envelope fa-fw" aria-hidden="true" />
@@ -78,9 +100,11 @@ export default class Sidebar extends Component {
           <li className="sidebar-nav-item">
             <Link
               to="/users"
-              className={`sidebar-nav-link ${activeTab === 5 ? 'active ' : ''}`}
+              className={`sidebar-nav-link ${
+                activeTab === '5' ? 'active ' : ''
+              }`}
               onClick={() => {
-                this.toggle(5);
+                this.toggle('5');
               }}
             >
               <i className="fa fa-users fa-fw" aria-hidden="true" />
@@ -92,3 +116,12 @@ export default class Sidebar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { page } = state.direction;
+  return {
+    page
+  };
+};
+
+export default connect(mapStateToProps)(Sidebar);
