@@ -15,6 +15,7 @@ import MediaQuery from 'react-responsive';
 import { userActions } from 'redux/actions/index.js';
 
 import Notifications from './components/Notifications';
+import SearchBox from './components/search/SearchBox';
 
 import Logo from './img/logo.png';
 import Avatar from './img/user.jpg';
@@ -25,12 +26,15 @@ class Navbar extends Component {
     super(props);
 
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      isSearchOpen: false
     };
 
     this.toggle = this.toggle.bind(this);
     this.toggleTab = this.toggleTab.bind(this);
     this.clearStorage = this.clearStorage.bind(this);
+    this.updateData = this.updateData.bind(this);
+
   }
 
   toggle() {
@@ -47,6 +51,10 @@ class Navbar extends Component {
   clearStorage() {
     const { dispatch } = this.props;
     dispatch(userActions.logout());
+  }
+
+  updateData() {
+    this.setState({ isSearchOpen: !this.state.isSearchOpen });
   }
 
   render() {
@@ -70,10 +78,7 @@ class Navbar extends Component {
                 <span>Add</span>
                 <i className="fa fa-plus" aria-hidden="true" />
               </a>
-              <button className="navbar-main-btn">
-                <i className="fa fa-search" />
-                <span className="sr-only">Search</span>
-              </button>
+              <SearchBox updateData={this.updateData} />
               <Notifications />
 
               <Dropdown isOpen={dropdownOpen} toggle={this.toggle}>

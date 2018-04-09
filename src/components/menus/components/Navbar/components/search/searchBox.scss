@@ -1,0 +1,36 @@
+.search-box {
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+
+    .navbar-main-btn {
+      margin-left: 0px !important;
+    }
+
+    .fa-search {
+      transition: 0.3s;
+
+      &.open {
+        color: $color-secondary !important;
+      }
+    }
+
+    .input-group {
+      vertical-align: middle;
+      height: 30px;
+
+      input {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        border-color: transparent;
+        height: 30px;
+        font-size: 14px;
+      
+        &:focus {
+          box-shadow: none;
+          border-bottom: 1px solid $color-white;
+        }
+      }
+    }
+  }
