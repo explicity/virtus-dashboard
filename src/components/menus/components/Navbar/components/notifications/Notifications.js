@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import _map from 'lodash/map';
 
@@ -9,6 +10,7 @@ import {
   DropdownItem,
   Badge
 } from 'reactstrap';
+import MediaQuery from 'react-responsive';
 
 import InboxItem from 'scenes/Home/components/inbox/components/InboxItem';
 import data from 'scenes/Home/components/inbox/components/data';
@@ -42,7 +44,9 @@ export default class Notifications extends Component {
   render() {
     const { showBadge } = this.state;
     return (
-      <Dropdown
+      <div>
+        <MediaQuery minWidth={768}>
+              <Dropdown
         isOpen={this.state.dropdownOpen}
         toggle={this.toggle}
         className="navbar-main-dropdown"
@@ -64,6 +68,11 @@ export default class Notifications extends Component {
           )}
         </DropdownMenu>
       </Dropdown>
+        </MediaQuery>
+        <MediaQuery maxWidth={767}>
+          <Link to='/inbox' className="nav-item-option">Messages</Link>
+        </MediaQuery>
+      </div>
     );
   }
 }
