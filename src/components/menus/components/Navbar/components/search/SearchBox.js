@@ -30,8 +30,6 @@ class SearchBox extends Component {
     const baseStyles = {
       open: {
         width: 150,
-        visibility: 'visible',
-        opacity: 1
       },
 
       closed: {
@@ -43,8 +41,6 @@ class SearchBox extends Component {
     const baseDivStyles = {
       open: {
         width: 180,
-        visibility: 'visible',
-        opacity: 1,
         marginRight: 0
       },
 

@@ -14,7 +14,7 @@ const WorkflowProjects = ({ status }) => {
     <div className="dark-bg">
       <div className="container">
         <div className="table-responsive-lg">
-          <table className="table table-hover workflow-table">
+          <table className="table table-hover users-table">
             <thead>
               <tr>
                 <th scope="col">Project title</th>

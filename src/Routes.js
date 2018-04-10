@@ -12,6 +12,7 @@ import SignUp from './scenes/Sign/SignUp';
 import HomePage from './scenes/Home/HomePage';
 import Workflow from './scenes/Workflow/Workflow';
 import Raport from './scenes/Raport/Raport';
+import Users from './scenes/Users/Users';
 import Settings from './scenes/Settings/Settings';
 
 const Routes = () => {
@@ -43,6 +44,7 @@ const Routes = () => {
         <DefaultLayout path="/home" component={HomePage} />
         <DefaultLayout path="/workflow" component={Workflow} />
         <DefaultLayout path="/raport" component={Raport} />
+        <DefaultLayout path="/users" component={Users} />
         <DefaultLayout path="/settings" component={Settings} />
       </Switch>
     </Router>

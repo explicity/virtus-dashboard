@@ -20,7 +20,7 @@ export default [
     progress: 100,
     deadline: moment('2018-06-12').format('D MMMM YYYY'),
     spent: '40 hours',
-  },
+  }, 
 
   {
     id: 1,
@@ -61,7 +61,7 @@ export default [
     progress: 15,
     deadline: moment('2018-06-01').format('D MMMM YYYY'),
     spent: '15 hours',
-    email: user.email
+    email: user.email,
   },
 
   {
@@ -89,7 +89,7 @@ export default [
     progress: 40,
     deadline: moment('2018-09-30').format('D MMMM YYYY'),
     spent: '52 hours',
-    email: user.email
+    email: user.email,
   },
 
   {
@@ -117,7 +117,7 @@ export default [
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email
+    email: user.email,
   },
 
   {
@@ -215,6 +215,20 @@ export default [
     duties: 'Account',
     progress: 100,
     deadline: moment('2018-06-05').format('D MMMM YYYY'),
+    spent: '140 hours',
+  },
+
+  {
+    id: 15,
+    title: 'Dashboard',
+    company: 'Google',
+    price: 1500,
+    url: User4,
+    username: 'Lyall Roach',
+    status: 'Quened',
+    duties: 'UX/UI Designer',
+    progress: 25,
+    deadline: moment('2018-05-05').format('D MMMM YYYY'),
     spent: '140 hours',
   }
 ];

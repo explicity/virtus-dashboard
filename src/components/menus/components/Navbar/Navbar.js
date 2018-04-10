@@ -14,7 +14,7 @@ import MediaQuery from 'react-responsive';
 
 import { userActions } from 'redux/actions/index.js';
 
-import Notifications from './components/Notifications';
+import Notifications from './components/notifications/Notifications';
 import SearchBox from './components/search/SearchBox';
 
 import Logo from './img/logo.png';

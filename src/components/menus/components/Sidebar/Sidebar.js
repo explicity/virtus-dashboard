@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { Badge } from 'reactstrap';
+
 import { userActions } from 'redux/actions/index.js';
 
 import './sidebar.scss';
@@ -12,7 +14,8 @@ class Sidebar extends Component {
     super(props);
 
     this.state = {
-      activeTab: this.props.page
+      activeTab: this.props.page,
+      showBadge: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -22,6 +25,12 @@ class Sidebar extends Component {
     this.setState({
       activeTab: nextProps.page
     });
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ showBadge: true });
+    }, 3000);
   }
 
   toggle(tab) {
@@ -36,7 +45,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { activeTab } = this.state;
+    const { activeTab, showBadge } = this.state;
 
     return (
       <aside className="sidebar position-fixed">
@@ -95,6 +104,7 @@ class Sidebar extends Component {
             >
               <i className="fa fa-envelope fa-fw" aria-hidden="true" />
               <span className="sr-only">Inbox</span>
+              {showBadge && <Badge color="primary" />}
             </Link>
           </li>
           <li className="sidebar-nav-item">

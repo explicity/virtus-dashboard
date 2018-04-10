@@ -1,0 +1,28 @@
+// colors
+$table-bg: #3a3e52;
+
+.table-item {
+  &-username {
+    .username-logo {
+      position: relative;
+
+      .badge {
+        right: 1px;
+        border-color: $table-bg;
+      }
+    }
+  }
+
+  &-activity {
+    color: $color-text;
+
+    .fa {
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    &.active {
+      color: $color-success;
+    }
+  }
+}

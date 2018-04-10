@@ -70,7 +70,7 @@
           border: 2px solid $color-secondary;
           color: $color-white;
           transition: 0.3s;
-        margin-right: 30px;
+          margin-right: 30px;
 
           &:hover {
             background-color: $color-secondary;
@@ -86,45 +86,6 @@
           font-size: 12px;
           transition: 0.3s;
           color: $color-secondary;
-        }
-      }
-
-      &-dropdown {
-        position: relative !important;
-
-        @media (max-width: 579px) {
-          .dropdown-item {
-            padding: 10px;
-          }
-        }
-
-        .badge {
-          position: absolute;
-          padding: 3.5px;
-          border-radius: 50%;
-          right: -1px;
-          top: -2px;
-          border: 2px solid $color-main;
-        }
-        .btn {
-          padding: 0;
-          background-color: transparent;
-          border: transparent;
-
-          &:focus {
-            box-shadow: none;
-          }
-
-          &-secondary {
-            &:not(:disabled):not(.disabled):active {
-              background-color: transparent;
-              border-color: transparent;
-
-              &:focus {
-                box-shadow: none;
-              }
-            }
-          }
         }
       }
     }

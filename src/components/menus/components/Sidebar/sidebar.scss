@@ -20,6 +20,7 @@ $color-hover: #97a9ba;
       display: flex;
       justify-content: center;
       padding: 22px;
+      position: relative;
 
       .fa {
         color: $color-link;
@@ -29,6 +30,11 @@ $color-hover: #97a9ba;
         &.fa-line-chart {
           font-size: 19px;
         }
+      }
+
+      .badge {
+        top: 19px;
+        right: 13px;
       }
 
       &:hover {
