@@ -13,12 +13,14 @@ export default class InboxItem extends Component {
   readMessage() {
     const { item } = this.props;
     item.status = 'readed';
+
+    this.props.Clicked();
   }
 
   render() {
     const { item } = this.props;
     return (
-      <Link to="/home" className="item" onClick={this.readMessage}>
+      <div className="item" onClick={this.readMessage}>
         <div className="mr-3">
           <img
             src={item.url}
@@ -40,7 +42,7 @@ export default class InboxItem extends Component {
           </div>
           <p className="content-info">{item.message}</p>
         </div>
-      </Link>
+      </div>
     );
   }
 }

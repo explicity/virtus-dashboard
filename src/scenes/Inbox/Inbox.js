@@ -26,7 +26,7 @@ export default class Inbox extends Component {
     const { mailboxId } = this.state;
     const mailbox = data.filter(mailbox => mailbox.id === mailboxId)[0];
     return (
-      <div>
+      <div className="inbox">
         <InboxOptions onSelectMailbox={this.handleSelectMailbox} />
         <Mailbox key={mailbox.id} emails={mailbox.emails} />
       </div>

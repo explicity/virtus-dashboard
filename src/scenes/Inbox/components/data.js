@@ -15,7 +15,7 @@ export default [
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
         time: 'Today, 5:32 PM',
-        status: 'unreaded'
+        status: 'unreaded',
       },
 
       {
@@ -35,7 +35,7 @@ export default [
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
         time: 'Today, 5:32 PM',
-        status: 'readed'
+        status: 'readed',
       },
 
       {

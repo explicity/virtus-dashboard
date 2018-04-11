@@ -1,0 +1,27 @@
+.chatroom {
+  background-color: $color-main;
+  height: calc(100vh - 126px);
+  padding: 0 15px;
+
+  &.none-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .none-selected-text {
+    color: $color-white;
+  }
+
+  &-chat {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 90%;
+  }
+}
+
+.inbox {
+  max-height: calc(100vh - 60px);
+}

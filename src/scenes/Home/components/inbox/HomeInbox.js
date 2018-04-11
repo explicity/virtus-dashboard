@@ -8,7 +8,7 @@ import data from 'scenes/Inbox/components/data';
 import './inbox.scss';
 
 const HomeInbox = () => {
-  const unreaded = data.filter(item => item.status === 'unreaded').length;
+  const unreaded = data[0].emails.filter(item => item.status === 'unreaded').length;
   return (
     <div className="inner">
       <header className="inner-header">
