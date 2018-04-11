@@ -6,7 +6,7 @@ import './usersItem.scss';
 
 const UsersItem = ({ user }) => {
   return (
-    <tr className="table-item">
+    <tr className="table-item user">
       <th scope="row">
         <div className="table-item-username">
           <a href=" " className="username-logo">

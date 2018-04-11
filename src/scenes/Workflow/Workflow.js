@@ -18,10 +18,11 @@ export default class Workflow extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: '2',
     };
+
+    this.toggle = this.toggle.bind(this);
   }
 
   toggle(tab) {

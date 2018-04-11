@@ -13,7 +13,7 @@ import {
 import MediaQuery from 'react-responsive';
 
 import InboxItem from 'scenes/Home/components/inbox/components/InboxItem';
-import data from 'scenes/Home/components/inbox/components/data';
+import data from 'scenes/Inbox/components/data';
 
 import './notifications.scss';
 
@@ -58,7 +58,7 @@ export default class Notifications extends Component {
         </DropdownToggle>
         <DropdownMenu>
           {_map(
-            data,
+            data[0].emails,
             (item, index) =>
               index < 5 && (
                 <DropdownItem key={index}>

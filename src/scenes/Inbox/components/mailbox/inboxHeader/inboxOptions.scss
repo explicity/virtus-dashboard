@@ -1,0 +1,39 @@
+//colors
+$color-tabs: #2b2d3c;
+
+.nav-tabs {
+  &-inbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .inbox-option {
+      margin: 0 15px;
+
+      &.active {
+        .inbox-option-btn {
+          color: $color-white;
+        }
+      }
+
+      &-btn {
+        color: $color-tabs;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        letter-spacing: 0.36px; 
+        transition: .3s;
+
+        &:hover {
+          cursor: pointer;
+          color: $color-black;
+        }
+
+        .fa {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

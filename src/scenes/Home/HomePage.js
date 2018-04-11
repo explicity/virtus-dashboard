@@ -3,7 +3,7 @@ import React from 'react';
 import LineChartSection from './components/charts/lineChart/LineChartSection';
 import ColumnChart from './components/charts/columnChart/ColumnChart';
 import Calendar from './components/calendar/Calendar';
-import Inbox from './components/inbox/Inbox';
+import HomeInbox from './components/inbox/HomeInbox';
 import Projects from './components/projects/Projects';
 
 const HomePage = () => (
@@ -22,7 +22,7 @@ const HomePage = () => (
           <ColumnChart />
         </div>
         <div className="col-12 col-md-6 col-lg-3 mb-4">
-          <Inbox />
+          <HomeInbox />
         </div>
         <div className="col-12 col-md-6 col-lg-4 mb-4">
           <Calendar />

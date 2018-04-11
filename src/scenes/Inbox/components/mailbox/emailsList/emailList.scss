@@ -1,0 +1,21 @@
+//colors
+$list-bg: #2b2d3c;
+
+.email-list {
+  background-color: $list-bg;
+  box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
+  padding: 0 !important;
+
+  &-btn {
+    border-radius: 5px;
+
+    .btn {
+      font-size: 16px;
+
+      &-primary {
+        color: $color-secondary;
+        border-color: $color-secondary;
+      }
+    }
+  }
+}

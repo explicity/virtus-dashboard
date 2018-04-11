@@ -2,6 +2,16 @@
 $table-bg: #3a3e52;
 
 .table-item {
+  &.user {
+    td {
+      padding: 20px 10px;
+    }
+
+    th {
+      padding: 20px 25px;
+    }
+  }
+
   &-username {
     .username-logo {
       position: relative;

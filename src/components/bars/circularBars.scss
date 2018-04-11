@@ -20,6 +20,10 @@ $color-description: #9ca1b2;
     width: 60px;
     margin-right: 15px;
 
+    .CircularProgressbar {
+      vertical-align: middle;
+    }
+    
     .CircularProgressbar-path {
       transform-origin: center center;
     }

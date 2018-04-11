@@ -3,11 +3,11 @@ import React from 'react';
 import _map from 'lodash/map';
 
 import InboxItem from './components/InboxItem';
-import data from './components/data';
+import data from 'scenes/Inbox/components/data';
 
 import './inbox.scss';
 
-const Inbox = () => {
+const HomeInbox = () => {
   const unreaded = data.filter(item => item.status === 'unreaded').length;
   return (
     <div className="inner">
@@ -22,10 +22,10 @@ const Inbox = () => {
         </h3>
       </header>
       <div className="inner-item item-message">
-        {_map(data, (item, index) => <InboxItem key={index} item={item} />)}
+        {_map(data[0].emails, (item, index) => <InboxItem key={index} item={item} />)}
       </div>
     </div>
   );
 };
 
-export default Inbox;
+export default HomeInbox;
