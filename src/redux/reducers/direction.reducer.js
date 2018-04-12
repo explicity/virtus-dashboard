@@ -6,6 +6,12 @@ export const direction = (state = {}, action) => {
       return {
         page: action.page
       };
+
+    case userConstants.HANDLE_MESSAGE:
+      return {
+        openEmail: action.payload.emailId
+      };
+
     default:
       return state;
   }

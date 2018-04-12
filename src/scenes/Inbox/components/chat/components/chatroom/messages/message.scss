@@ -4,7 +4,7 @@ $message-bg: #404359;
 .chat {
   display: flex;
   max-width: 60%;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 
   &.left {
     margin-right: auto;
@@ -23,6 +23,7 @@ $message-bg: #404359;
 
   &.right {
     margin-left: auto;
+    justify-content: flex-end;
 
     .chat {
       &-img {
@@ -49,9 +50,10 @@ $message-bg: #404359;
     align-items: center;
 
     &-message {
-      box-shadow: 0 3px 20px rgba(158, 163, 180, 0.3);
+      box-shadow: 0 3px 15px rgba(158, 163, 180, 0.2);
       padding: 10px;
       margin-bottom: 5px;
+      word-break: break-all;
 
       span {
         color: $color-white;

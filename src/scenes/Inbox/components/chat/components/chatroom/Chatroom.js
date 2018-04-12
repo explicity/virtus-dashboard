@@ -4,10 +4,9 @@ import ReactDOM from 'react-dom';
 import _map from 'lodash/map';
 import moment from 'moment';
 
-import Message from './components/Message';
+import Message from './messages/Message';;
 
-import data from './../data';
-import messagesData from './messagesData';
+import messagesData from './../../messagesData';
 
 import './chatroom.scss';
 
@@ -56,7 +55,7 @@ export default class Chatroom extends Component {
             {
               user: username,
               message: ReactDOM.findDOMNode(this.refs.msg).value,
-              time: moment().fromNow()
+              time: moment().format('D MMMM YYYY, h:mm a')
             }
           ])
         },
@@ -69,23 +68,28 @@ export default class Chatroom extends Component {
 
   render() {
     const { user, messages } = this.state;
-
-    console.log(messages);
     return (
       <div className="col-12 col-md-6">
-        <div className="chatroom" id="chatroomId">
-          <ul className="chatroom-chat">
-            {_map(messages, (item, index) => (
-              <Message key={index} chat={item} user={user} />
-            ))}
-          </ul>
+        <div className="chatroom-wrapper">
+          <div className="chatroom" id="chatroomId">
+            <ul className="chatroom-chat">
+              {_map(messages, (item, index) => (
+                  <Message key={index} chat={item} user={user} />
+              ))}
+            </ul>
+          </div>
           <form className="input">
             <input
               type="text"
               ref="msg"
               onKeyDown={this.handleKeyDown}
               placeholder="Write a message"
+              className="input-chatroom"
             />
+            <button type="button" className="attach-btn">
+              <i className="fa fa-paperclip" />
+              <span className="sr-only">Attach</span>
+            </button>
             <input type="submit" value="Submit" className="sr-only" />
           </form>
         </div>

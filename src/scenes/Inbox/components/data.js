@@ -12,9 +12,6 @@ export default [
         id: 1,
         url: User1,
         username: 'Michelle Stewart',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'unreaded',
       },
 
@@ -22,9 +19,6 @@ export default [
         id: 2,
         url: User2,
         username: 'Jolene Slater',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'unreaded'
       },
 
@@ -32,9 +26,6 @@ export default [
         id: 3,
         url: User3,
         username: 'Lyall Roach',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'readed',
       },
 
@@ -42,9 +33,6 @@ export default [
         id: 4,
         url: User1,
         username: 'Michelle Stewart',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'readed'
       },
 
@@ -52,9 +40,6 @@ export default [
         id: 5,
         url: User1,
         username: 'Michelle Stewart',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'readed'
       }
     ]
@@ -69,9 +54,6 @@ export default [
         id: 6,
         url: User3,
         username: 'Lyall Roach',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'readed'
       }
     ]
@@ -86,9 +68,6 @@ export default [
         id: 7,
         url: User1,
         username: 'Michelle Stewart',
-        message:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: 'Today, 5:32 PM',
         status: 'readed'
       }
     ]

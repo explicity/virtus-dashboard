@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import { connect } from 'react-redux';
 
 import _map from 'lodash/map';
 
@@ -7,25 +10,51 @@ import data from 'scenes/Inbox/components/data';
 
 import './inbox.scss';
 
-const HomeInbox = () => {
-  const unreaded = data[0].emails.filter(item => item.status === 'unreaded').length;
-  return (
-    <div className="inner">
-      <header className="inner-header">
-        <h3 className="inner-title">
-          Inbox{' '}
-          {unreaded !== 0 && (
-            <span>
-              (<span className="inner-title-unreaded">{unreaded}</span>)
-            </span>
-          )}
-        </h3>
-      </header>
-      <div className="inner-item item-message">
-        {_map(data[0].emails, (item, index) => <InboxItem key={index} item={item} />)}
-      </div>
-    </div>
-  );
-};
+class HomeInbox extends Component {
+  constructor(props) {
+    super(props);
 
-export default HomeInbox;
+    this.handleMessage = this.handleMessage.bind(this);
+  }
+
+  handleMessage(id) {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'HANDLE_MESSAGE',
+      payload: {
+        emailId: id
+      }
+    });
+  }
+
+  render() {
+    const unreaded = data[0].emails.filter(item => item.status === 'unreaded')
+      .length;
+    return (
+      <div className="inner">
+        <header className="inner-header">
+          <h3 className="inner-title">
+            Inbox{' '}
+            {unreaded !== 0 && (
+              <span>
+                (<span className="inner-title-unreaded">{unreaded}</span>)
+              </span>
+            )}
+          </h3>
+        </header>
+        <div className="inner-item item-message">
+          {_map(data[0].emails, (item, index) => (
+            <Link to="/inbox" key={item.id} >
+              <InboxItem
+                item={item}
+                Selected={() => this.handleMessage(item.id)}
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default connect()(HomeInbox);

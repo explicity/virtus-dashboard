@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import messagesData from 'scenes/Inbox/components/chat/messagesData';
+
 import './inbox-item.scss';
 
 export default class InboxItem extends Component {
@@ -14,11 +16,13 @@ export default class InboxItem extends Component {
     const { item } = this.props;
     item.status = 'readed';
 
-    this.props.Clicked();
+    this.props.Selected();
   }
 
   render() {
     const { item } = this.props;
+    const messages = messagesData.filter(message => message.id === item.id)[0];
+    const { chat } = messages;
     return (
       <div className="item" onClick={this.readMessage}>
         <div className="mr-3">
@@ -37,10 +41,10 @@ export default class InboxItem extends Component {
                 item.status === 'unreaded' ? 'active' : ''
               }`}
             >
-              {item.time}
+              {chat[0].time}
             </p>
           </div>
-          <p className="content-info">{item.message}</p>
+          <p className="content-info">{chat[0].message}</p>
         </div>
       </div>
     );

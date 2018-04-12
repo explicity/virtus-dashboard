@@ -4,6 +4,8 @@ import _map from 'lodash/map';
 
 import InboxItem from 'scenes/Home/components/inbox/components/InboxItem';
 
+import '../../chat/messagesData';
+
 import './emailList.scss';
 
 const EmailList = ({ emails, onSelectEmail }) => {
@@ -14,7 +16,7 @@ const EmailList = ({ emails, onSelectEmail }) => {
           <InboxItem
             key={item.id}
             item={item}
-            Clicked={() => onSelectEmail(item.id)}
+            Selected={() => onSelectEmail(item.id)}
           />
         ))}
       </div>

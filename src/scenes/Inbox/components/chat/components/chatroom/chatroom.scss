@@ -1,0 +1,88 @@
+//colors
+$bg-input: #404359;
+$color-placeholder: #9ca1b2;
+
+.chatroom {
+  height: calc(100vh - 166px);
+  padding: 0 15px;
+  overflow-y: scroll;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-grey;
+    border: 2px solid $color-grey;
+  }
+
+  &-wrapper {
+    background-color: $color-main;
+    height: calc(100vh - 126px);
+
+    .input {
+      position: absolute;
+      bottom: 0;
+      width: 95%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &-chatroom {
+        padding: 5px 45px 5px 15px;
+        height: 40px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: $bg-input;
+        color: $color-white;
+        border: 1px solid rgba(156, 161, 178, 0.3);
+
+        &::placeholder {
+          font-size: 14px;
+          color: $color-placeholder;
+          letter-spacing: 0.32px;
+          font-weight: 400;
+        }
+      }
+
+      .attach-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        border: transparent;
+        background-color: transparent;
+
+        .fa-paperclip {
+          color: $color-placeholder;
+        }
+      }
+    }
+  }
+
+  &.none-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 126px);
+  }
+
+  .none-selected-text {
+    color: $color-white;
+  }
+
+  &-chat {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.inbox {
+  max-height: calc(100vh - 60px);
+}
