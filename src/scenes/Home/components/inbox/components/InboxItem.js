@@ -44,7 +44,7 @@ export default class InboxItem extends Component {
               {chat[0].time}
             </p>
           </div>
-          <p className="content-info">{chat[0].message}</p>
+          <p className="content-info">{chat[chat.length - 1].message}</p>
         </div>
       </div>
     );

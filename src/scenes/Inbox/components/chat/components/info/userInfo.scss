@@ -1,0 +1,79 @@
+//colors
+$chat-bg: #2b2d3c;
+$color-proffecion: #9ea3b4;
+
+.chat {
+  &-info {
+    height: calc(100vh - 126px);
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
+    background-color: $chat-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .info {
+      padding: 20px 10px;
+      overflow-y: scroll;
+      text-align: center;
+      color: $color-text;
+      font-size: 15px;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $color-grey;
+        border: 2px solid $color-grey;
+      }
+
+      &-image {
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+
+        .badge {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .user {
+        &-img {
+          margin-bottom: 15px;
+        }
+
+        &-main {
+          margin-bottom: 15px;
+
+          h3 {
+            color: $color-white;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.44px;
+            margin-bottom: 3px;
+          }
+
+          p {
+            color: $color-proffecion;
+            letter-spacing: 0.32px;
+          }
+        }
+      }
+    }
+
+    &-item {
+      margin-bottom: 15px;
+
+      .item-option {
+        margin-top: 5px;
+        color: $color-white;
+      }
+    }
+  }
+}

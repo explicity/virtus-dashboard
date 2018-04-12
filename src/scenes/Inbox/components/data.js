@@ -25,7 +25,7 @@ export default [
       {
         id: 3,
         url: User3,
-        username: 'Lyall Roach',
+        username: 'Dominic Lynton',
         status: 'readed',
       },
 

@@ -20,6 +20,7 @@ export default class Chatroom extends Component {
     };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.scrollToBot = this.scrollToBot.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,6 +69,8 @@ export default class Chatroom extends Component {
 
   render() {
     const { user, messages } = this.state;
+
+    console.log(messages);
     return (
       <div className="col-12 col-md-6">
         <div className="chatroom-wrapper">

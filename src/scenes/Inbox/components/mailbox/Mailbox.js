@@ -40,7 +40,6 @@ class Mailbox extends Component {
     const { emailId } = this.state;
     let mail; let messages;
     let selectedEmail;
-    console.log(openEmail);
 
     if (emailId) {
       mail = emails.filter(mail => mail.id === emailId)[0];

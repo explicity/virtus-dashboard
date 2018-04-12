@@ -15,7 +15,10 @@ export default [
     email: 'nickyhunt@design.com',
     phone: '+48 500 400 300',
     company: 'Symu.co',
-    activity: 'online'
+    activity: 'online',
+    adress: '65 Lorem St, Warsaw, PL',
+    secondary:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 
   {
@@ -26,7 +29,10 @@ export default [
     email: 'johndoe@design.com',
     phone: '+48 500 400 300',
     company: 'Google',
-    activity: 'online'
+    activity: 'online',
+    adress: '65 Lorem St, Warsaw, PL',
+    secondary:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 
   {
@@ -39,7 +45,10 @@ export default [
     company: 'Symu.co',
     activity: moment()
       .startOf('hour')
-      .fromNow()
+      .fromNow(),
+    adress: '65 Lorem St, Warsaw, PL',
+    secondary:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 
   {
@@ -52,7 +61,10 @@ export default [
     company: 'Facebook',
     activity: moment()
       .startOf('day')
-      .fromNow()
+      .fromNow(),
+    adress: '65 Lorem St, Warsaw, PL',
+    secondary:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 
   {
@@ -63,6 +75,9 @@ export default [
     email: 'patricksmith@design.com',
     phone: '+48 500 400 300',
     company: 'Facebook',
-    activity: moment('20170620', 'YYYYMMDD').fromNow()
+    activity: moment('20170620', 'YYYYMMDD').fromNow(),
+    adress: '65 Lorem St, Warsaw, PL',
+    secondary:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }
 ];
