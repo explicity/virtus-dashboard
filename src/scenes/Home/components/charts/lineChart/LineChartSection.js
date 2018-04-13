@@ -9,7 +9,7 @@ import data from './data';
 const options = Object.assign(data, config.lineConfig);
 
 const ChartsSection = () => (
-  <div className="charts">
+  <div className="charts charts-line">
     <CircularBars />
     <ReactHighcharts config={options} />
   </div>

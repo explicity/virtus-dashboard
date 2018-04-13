@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
@@ -15,7 +16,7 @@ const WorkflowProjectsItem = ({ user }) => {
 
   const divStyle = {
     borderLeft: '2px solid',
-    borderLeftColor: color,
+    borderLeftColor: color
   };
 
   return (
@@ -70,3 +71,17 @@ const WorkflowProjectsItem = ({ user }) => {
 };
 
 export default WorkflowProjectsItem;
+
+WorkflowProjectsItem.propTypes = {
+  user: PropTypes.shape({
+    title: PropTypes.string,
+    company: PropTypes.string,
+    price: PropTypes.number,
+    spent: PropTypes.string,
+    url: PropTypes.string,
+    username: PropTypes.string,
+    duties: PropTypes.string,
+    status: PropTypes.string,
+    progress: PropTypes.number
+  })
+};

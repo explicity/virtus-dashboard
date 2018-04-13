@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
@@ -22,17 +23,22 @@ const RaportTable = () => (
         {
           Header: 'Time',
           accessor: 'time',
-          render: props => <span>{moment(props.value).format('MMMM DDDD YYYY')}</span>,
+          render: props => <span>{moment(props.value).format()}</span>,
+          Cell: props => <span>{moment(props.value).format('MMMM D')}</span>,
         },
 
         {
           Header: 'Views',
-          accessor: 'views'
+          accessor: 'views',
+          render: props => <span>{props.value}</span>,
+          Cell: props => <span>{props.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}</span>,
         },
 
         {
           Header: 'Visitors',
-          accessor: 'visitors'
+          accessor: 'visitors',
+          render: props => <span>{props.value}</span>,
+          Cell: props => <span>{props.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}</span>,
         },
 
         {
@@ -44,19 +50,19 @@ const RaportTable = () => (
         {
           Header: 'CPC',
           accessor: 'CPC',
-          Cell: props => <span>${props.value}</span>
+          Cell: props => <span>{props.value.toFixed(2)}%</span>
         },
 
         {
           Header: 'CPV',
           accessor: 'CPV',
-          Cell: props => <span>${props.value}</span>
+          Cell: props => <span>{props.value.toFixed(2)}%</span>
         },
 
         {
           Header: 'CPM',
           accessor: 'CPM',
-          Cell: props => <span>${props.value}</span>
+          Cell: props => <span>{props.value.toFixed(2)}%</span>
         },
 
         {
@@ -85,3 +91,7 @@ const RaportTable = () => (
 );
 
 export default RaportTable;
+
+RaportTable.propTypes = {
+  value: PropTypes.string
+};

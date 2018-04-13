@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
 import _map from 'lodash/map';
+import _sortBy from 'lodash/sortBy';
+import moment from 'moment';
 
 import InboxItem from 'scenes/Home/components/inbox/components/InboxItem';
 
-import '../../chat/messagesData';
+import messagesData from '../../chat/messagesData';
 
 import './emailList.scss';
 
-const EmailList = ({ emails, onSelectEmail }) => {
+const EmailList = ({ emails, onSelectEmail, status }) => {
+  const unreaded = emails.filter(item => item.status === 'unreaded');
+  const byDate = _sortBy(messagesData, (item) => {
+    return  new moment(item.chat[0].time);
+  });
   return (
     <div className="col-12 col-md-3 email-list">
       <div className="emails">
@@ -30,4 +37,9 @@ const EmailList = ({ emails, onSelectEmail }) => {
   );
 };
 
-export default EmailList;
+const mapStateToProps = (state) => {
+  const { status } = state.sort;
+  return { status };
+};
+
+export default connect(mapStateToProps)(EmailList);

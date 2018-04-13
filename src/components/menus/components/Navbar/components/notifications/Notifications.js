@@ -46,31 +46,32 @@ export default class Notifications extends Component {
     return (
       <div>
         <MediaQuery minWidth={768}>
-              <Dropdown
-        isOpen={this.state.dropdownOpen}
-        toggle={this.toggle}
-        className="navbar-main-dropdown"
-      >
-        <DropdownToggle>
-          <i className="fa fa-bell-o" aria-hidden="true" />
-          {showBadge && <Badge color="primary" />}
-          <span className="sr-only">Notifications</span>{' '}
-        </DropdownToggle>
-        <DropdownMenu>
-          {_map(
-            data[0].emails,
-            (item, index) =>
-              index < 5 && (
-                <DropdownItem key={index}>
-                  <InboxItem item={item} />
-                </DropdownItem>
-              )
-          )}
-        </DropdownMenu>
-      </Dropdown>
+          <Dropdown
+            isOpen={this.state.dropdownOpen}
+            toggle={this.toggle}
+            className="navbar-main-dropdown">
+            <DropdownToggle>
+              <i className="fa fa-bell-o" aria-hidden="true" />
+              {showBadge && <Badge color="primary" />}
+              <span className="sr-only">Notifications</span>{' '}
+            </DropdownToggle>
+            <DropdownMenu>
+              {_map(
+                data[0].emails,
+                (item, index) =>
+                  index < 5 && (
+                    <DropdownItem key={index}>
+                      <InboxItem item={item} />
+                    </DropdownItem>
+                  )
+              )}
+            </DropdownMenu>
+          </Dropdown>
         </MediaQuery>
         <MediaQuery maxWidth={767}>
-          <Link to='/inbox' className="nav-item-option">Messages</Link>
+          <Link to="/inbox" onClick={this.props.toggle} className="nav-item-option">
+            Messages
+          </Link>
         </MediaQuery>
       </div>
     );

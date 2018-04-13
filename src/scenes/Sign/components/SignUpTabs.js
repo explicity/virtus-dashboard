@@ -6,7 +6,7 @@ import { TabPane, TabContent } from 'reactstrap';
 import Login from './Login/Login.js';
 import Register from './Register/Register.js';
 
-import './signup-tabs.scss';
+import './signupTabs.scss';
 
 export default class SignUpTabs extends Component {
   constructor(props) {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import _map from 'lodash/map';
 
 import MainDropdown from 'components/dropdown/main/MainDropdown';
-
-import data from './../../data'; 
+import data from './../../data';
 
 import './inboxOptions.scss';
 
@@ -35,12 +35,11 @@ export default class InboxOptions extends Component {
 
   render() {
     const { activeTab } = this.state;
-
     return (
       <div className="tabs">
         <div className="nav-tabs">
           <div className="nav-tabs-inbox">
-            <ul className="d-flex">
+            <ul className="d-flex inbox-item">
               {_map(data, item => (
                 <li
                   key={item.id}
@@ -65,3 +64,7 @@ export default class InboxOptions extends Component {
     );
   }
 }
+
+InboxOptions.propTypes = {
+  onSelectMailbox: PropTypes.func
+};

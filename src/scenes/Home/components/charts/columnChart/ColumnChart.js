@@ -26,7 +26,7 @@ const ChartsSection = ({ status }) => {
   }
   return (
     <div className="charts charts-column">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="charts-column-header mb-3">
         <h3 className="inner-title">Sales Report</h3>
         <MainDropdown data={selectOptions} />
       </div>

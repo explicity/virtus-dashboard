@@ -1,3 +1,6 @@
+//colors
+$color-hover: #f8f9fa;
+
 .navbar-main-dropdown {
   @media (max-width: 579px) {
     .dropdown-item {
@@ -52,6 +55,11 @@
         max-width: 300px;
         max-height: 90px;
         background-color: $color-white;
+        border-bottom: none !important;
+
+        &:hover {
+          background-color: $color-hover;
+        }
 
         .content {
           &-user {

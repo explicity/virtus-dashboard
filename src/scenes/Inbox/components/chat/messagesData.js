@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 const user = JSON.parse(localStorage.getItem('userData'));
 
 export default [
@@ -9,33 +7,33 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180411'
       },
 
       {
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ulla pariatur.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180412'
       },
 
       {
         user: user.username,
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180412'
       },
 
       {
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ulla pariatur.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180412'
       },
 
       {
         user: user.username,
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
-        time: moment('20180412').format('D MMMM YYYY, h:mm a')
+        time: '20180412'
       }
     ]
   },
@@ -46,7 +44,7 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180410'
       }
     ]
   },
@@ -57,18 +55,18 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180411'
       },
 
       {
-        message: 'bebe',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        message: 'Lorem ipsum',
+        time: '20180411'
       },
 
       {
         user: user.username,
-        message: 'well',
-        time: moment('20180412').format('D MMMM YYYY, h:mm a')
+        message: 'Lorem ipsum dolor sit amet',
+        time: '20180413'
       }
     ]
   },
@@ -79,7 +77,7 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180411'
       }
     ]
   },
@@ -89,7 +87,7 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180412'
       }
     ]
   },
@@ -100,7 +98,7 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180410'
       }
     ]
   },
@@ -111,7 +109,7 @@ export default [
       {
         message:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.',
-        time: moment('20180411').format('D MMMM YYYY, h:mm a')
+        time: '20180409'
       }
     ]
   }

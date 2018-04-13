@@ -80,7 +80,7 @@ const columnConfig = {
       pointPadding: 0.2,
       borderWidth: 0,
       color: '#505464',
-      pointWidth: 25,
+      pointWidth: 20,
 
       states: {
         hover: {

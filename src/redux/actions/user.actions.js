@@ -6,7 +6,7 @@ function currentPage(page) {
 }
 
 function register(user) {
-  return dispatch => {
+  return (dispatch) => {
     user.online = false;
     localStorage.setItem('userData', JSON.stringify(user));
     dispatch(alertActions.success('Registration successful'));
@@ -14,7 +14,7 @@ function register(user) {
 }
 
 function login(username, password) {
-  return dispatch => {
+  return (dispatch) => {
     function success(user) {
       return { type: userConstants.LOGIN_SUCCESS, user };
     }
@@ -32,7 +32,7 @@ function login(username, password) {
 }
 
 function logout() {
-  return dispatch => {
+  return (dispatch) => {
     function request() {
       return { type: userConstants.LOGOUT };
     }
@@ -45,7 +45,7 @@ function logout() {
 }
 
 function update(username, email) {
-  return dispatch => {
+  return (dispatch) => {
     function success() {
       return { type: userConstants.UPDATE_DATA };
     }
@@ -60,7 +60,7 @@ function update(username, email) {
 }
 
 function deleteUser() {
-  return dispatch => {
+  return (dispatch) => {
     function request() {
       return { type: userConstants.DELETE };
     }

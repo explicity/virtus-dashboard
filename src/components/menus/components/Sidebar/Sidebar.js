@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,23 +15,30 @@ class Sidebar extends Component {
     super(props);
 
     this.state = {
-      activeTab: this.props.page,
+      activeTab: '1',
       showBadge: false
     };
 
     this.toggle = this.toggle.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillMount() {
+    const { page } = this.props;
     this.setState({
-      activeTab: nextProps.page
-    });
+      activeTab: page
+    })
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({ showBadge: true });
     }, 3000);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      activeTab: nextProps.page
+    });
   }
 
   toggle(tab) {
@@ -127,7 +135,7 @@ class Sidebar extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { page } = state.direction;
   return {
     page
@@ -135,3 +143,8 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Sidebar);
+
+Sidebar.propTypes = {
+  dispatch: PropTypes.func,
+  page: PropTypes.string
+};

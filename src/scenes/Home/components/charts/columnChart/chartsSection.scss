@@ -7,11 +7,36 @@
     overflow-x: scroll;
   }
 
+  @media (max-width: 767px) {
+    &.charts-line {
+      margin-bottom: 20px;
+    }
+  }
+
   .bars {
     margin-bottom: 10px;
   }
 
   &.charts-column {
     padding: 25px 25px 0;
+  }
+
+  &-column {
+    &-header {
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 489px) {
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (min-width: 490px) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
   }
 }

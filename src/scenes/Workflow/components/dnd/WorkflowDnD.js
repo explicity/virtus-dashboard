@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import _map from 'lodash/map';
@@ -159,3 +160,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(WorkflowDnD);
+
+WorkflowDnD.propTypes = {
+  status: PropTypes.string
+};

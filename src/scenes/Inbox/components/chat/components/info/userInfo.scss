@@ -13,11 +13,12 @@ $color-proffecion: #9ea3b4;
     flex-direction: column;
 
     .info {
-      padding: 20px 10px;
+      padding: 20px 15px;
       overflow-y: scroll;
       text-align: center;
       color: $color-text;
-      font-size: 15px;
+      font-size: 13px;
+      word-break: break-all;
 
       &::-webkit-scrollbar {
         width: 3px;
@@ -50,10 +51,11 @@ $color-proffecion: #9ea3b4;
 
         &-main {
           margin-bottom: 15px;
+          word-break: break-word;
 
           h3 {
             color: $color-white;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 700;
             letter-spacing: 0.44px;
             margin-bottom: 3px;

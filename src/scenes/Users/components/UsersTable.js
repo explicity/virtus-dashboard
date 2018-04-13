@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import _map from 'lodash/map';
@@ -8,25 +9,25 @@ import UsersItem from './components/UsersItem';
 import data from './data';
 
 const UsersTable = ({ status }) => {
-    let userList;
+  let userList;
 
-    const onlineUsers = data.filter(item => {
-      if (item.activity === 'online') {
-        return item;
-      }
-    });
-
-    const offlineUsers = data.filter(item => {
-      if (item.activity !== 'online') {
-        return item;
-      }
-    });
-
-    if (status === 'Active first') {
-      userList = onlineUsers.concat(offlineUsers);
-    } else if (status === 'Active last') {
-      userList = offlineUsers.concat(onlineUsers);
+  const onlineUsers = data.filter(item => {
+    if (item.activity === 'online') {
+      return item;
     }
+  });
+
+  const offlineUsers = data.filter(item => {
+    if (item.activity !== 'online') {
+      return item;
+    }
+  });
+
+  if (status === 'Active first') {
+    userList = onlineUsers.concat(offlineUsers);
+  } else if (status === 'Active last') {
+    userList = offlineUsers.concat(onlineUsers);
+  }
 
   return (
     <div className="table-responsive-lg">
@@ -48,9 +49,13 @@ const UsersTable = ({ status }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { status } = state.sort;
   return { status };
 };
 
 export default connect(mapStateToProps)(UsersTable);
+
+UsersTable.propTypes = {
+  status: PropTypes.string
+};

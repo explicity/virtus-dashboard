@@ -18,6 +18,8 @@
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-return-assign": "off",
+    "class-methods-use-this": "off"
   }
 }

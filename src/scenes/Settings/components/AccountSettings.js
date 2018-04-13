@@ -47,7 +47,7 @@ class AccountSettings extends Component {
   }
 
   showPassword() {
-    let input = document.getElementById('user-password');
+    const input = document.getElementById('user-password');
 
     if (input.type === 'password') {
       input.type = 'text';

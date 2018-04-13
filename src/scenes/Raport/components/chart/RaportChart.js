@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ReactHighcharts from 'react-highcharts';
@@ -41,3 +42,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(RaportChart);
+
+RaportChart.propTypes = {
+  status: PropTypes.string
+};

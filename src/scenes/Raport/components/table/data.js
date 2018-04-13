@@ -1,8 +1,7 @@
-
 const data = [
   {
     campaing: 'Lorem ipsum dolor sit amet tetur ',
-    time: '2018-04-12',
+    time: '20180412',
     views: 358000,
     visitors: 58200,
     CTR: 25,
@@ -14,7 +13,7 @@ const data = [
 
   {
     campaing: 'Sed do eiusmod tempor ',
-    time: '2018-05-12',
+    time: '20180721',
     views: 1200,
     visitors: 800,
     CTR: 10,
@@ -26,23 +25,15 @@ const data = [
 
   {
     campaing: 'Consectetur adipisicing elit sed',
-    time: '2017-06-12',
+    time: '20180604',
     views: 69000,
     visitors: 7300,
     CTR: 19,
     CPC: 6.22,
-    CPV: 3.90,
-    CPM: 37.80,
+    CPV: 3.9,
+    CPM: 37.8,
     status: 'Active'
   }
 ];
-
-for (var i = 0; i < data.length; i++) {
-    // data[i].views = data[i].views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    // data[i].visitors = data[i].visitors.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    data[i].CPC = data[i].CPC.toFixed(2);
-    data[i].CPV = data[i].CPV.toFixed(2);
-    data[i].CPM = data[i].CPM.toFixed(2);
-}
 
 export default data;

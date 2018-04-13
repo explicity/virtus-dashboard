@@ -27,6 +27,7 @@ class NavbarDropdown extends Component {
     this.toggle = this.toggle.bind(this);
     this.toggleActiveTab = this.toggleActiveTab.bind(this);
     this.clearStorage = this.clearStorage.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggle() {
@@ -38,6 +39,11 @@ class NavbarDropdown extends Component {
   toggleActiveTab() {
     const { dispatch } = this.props;
     dispatch(userActions.currentPage('0'));
+  }
+
+  toggleMenu() {
+    this.toggleActiveTab();
+    this.props.toggle();
   }
 
   clearStorage() {
@@ -85,7 +91,7 @@ class NavbarDropdown extends Component {
           <NavItem>
             <Link
               to="/settings"
-              onClick={this.toggleActiveTab}
+              onClick={this.toggleMenu}
               className="nav-item-option"
             >
               Settings

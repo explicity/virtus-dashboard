@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Badge } from 'reactstrap';
 
@@ -9,7 +9,7 @@ import './userInfo.scss';
 const UserInfo = ({ user }) => {
   const info = data.filter(item => item.username === user.username)[0];
   return (
-    <div className="col-12 col-md-3 p-0">
+    <div className="col-12 col-md-3 p-0 md-display">
       <div className="chat-info">
         <div className="info">
           <div className="info-image">

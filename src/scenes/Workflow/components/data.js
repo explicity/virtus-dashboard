@@ -19,8 +19,8 @@ export default [
     duties: 'Account',
     progress: 100,
     deadline: moment('2018-06-12').format('D MMMM YYYY'),
-    spent: '40 hours',
-  }, 
+    spent: '40 hours'
+  },
 
   {
     id: 1,
@@ -33,7 +33,7 @@ export default [
     duties: 'Account',
     progress: 0,
     deadline: moment('2018-06-09').format('D MMMM YYYY'),
-    spent: '0 hours',
+    spent: '0 hours'
   },
 
   {
@@ -47,7 +47,7 @@ export default [
     duties: 'Front End Dev',
     progress: 70,
     deadline: moment('2018-08-08').format('D MMMM YYYY'),
-    spent: '70 hours',
+    spent: '70 hours'
   },
 
   {
@@ -61,7 +61,7 @@ export default [
     progress: 15,
     deadline: moment('2018-06-01').format('D MMMM YYYY'),
     spent: '15 hours',
-    email: user.email,
+    email: user.email
   },
 
   {
@@ -75,7 +75,7 @@ export default [
     duties: 'Account',
     progress: 90,
     deadline: moment('2018-04-22').format('D MMMM YYYY'),
-    spent: '60 hours',
+    spent: '60 hours'
   },
 
   {
@@ -89,7 +89,7 @@ export default [
     progress: 40,
     deadline: moment('2018-09-30').format('D MMMM YYYY'),
     spent: '52 hours',
-    email: user.email,
+    email: user.email
   },
 
   {
@@ -103,7 +103,7 @@ export default [
     duties: 'Account',
     progress: 100,
     deadline: moment('2018-06-12').format('D MMMM YYYY'),
-    spent: '23 hours',
+    spent: '23 hours'
   },
 
   {
@@ -117,7 +117,7 @@ export default [
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email,
+    email: user.email
   },
 
   {
@@ -131,7 +131,7 @@ export default [
     duties: 'Front End Dev',
     progress: 30,
     deadline: moment('2018-08-11').format('D MMMM YYYY'),
-    spent: '40 hours',
+    spent: '40 hours'
   },
 
   {
@@ -145,7 +145,7 @@ export default [
     duties: 'Account',
     progress: 45,
     deadline: moment('2018-12-01').format('D MMMM YYYY'),
-    spent: '12 hours',
+    spent: '12 hours'
   },
 
   {
@@ -159,7 +159,7 @@ export default [
     duties: 'Front End Dev',
     progress: 0,
     deadline: moment('2018-05-27').format('D MMMM YYYY'),
-    spent: '0 hours',
+    spent: '0 hours'
   },
 
   {
@@ -173,7 +173,7 @@ export default [
     duties: 'Account',
     progress: 90,
     deadline: moment('2018-06-29').format('D MMMM YYYY'),
-    spent: '120 hours',
+    spent: '120 hours'
   },
 
   {
@@ -187,7 +187,7 @@ export default [
     duties: 'Account',
     progress: 45,
     deadline: moment('2018-04-12').format('D MMMM YYYY'),
-    spent: '4 hours',
+    spent: '4 hours'
   },
 
   {
@@ -201,7 +201,7 @@ export default [
     duties: 'Front End Dev',
     progress: 60,
     deadline: moment('2018-07-31').format('D MMMM YYYY'),
-    spent: '42 hours',
+    spent: '42 hours'
   },
 
   {
@@ -215,7 +215,7 @@ export default [
     duties: 'Account',
     progress: 100,
     deadline: moment('2018-06-05').format('D MMMM YYYY'),
-    spent: '140 hours',
+    spent: '140 hours'
   },
 
   {
@@ -229,6 +229,45 @@ export default [
     duties: 'UX/UI Designer',
     progress: 25,
     deadline: moment('2018-05-05').format('D MMMM YYYY'),
-    spent: '140 hours',
+    spent: '140 hours'
+  },
+  {
+    id: 16,
+    title: 'New App',
+    company: 'Google',
+    price: 1500,
+    url: User,
+    username: user.username,
+    status: 'Testing',
+    progress: 0,
+    deadline: moment('2018-07-03').format('D MMMM YYYY'),
+    spent: '0 hours',
+    email: user.email
+  },
+  {
+    id: 17,
+    title: 'Dashboard',
+    company: 'Facebook',
+    price: 1500,
+    url: User,
+    username: user.username,
+    status: 'Completed',
+    progress: 0,
+    deadline: moment('2018-07-03').format('D MMMM YYYY'),
+    spent: '0 hours',
+    email: user.email
+  },
+  {
+    id: 18,
+    title: 'Mobile Application',
+    company: 'Symu.co',
+    price: 1500,
+    url: User,
+    username: user.username,
+    status: 'Testing',
+    progress: 0,
+    deadline: moment('2018-07-03').format('D MMMM YYYY'),
+    spent: '0 hours',
+    email: user.email
   }
 ];

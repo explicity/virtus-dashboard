@@ -36,7 +36,7 @@ class Settings extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { updated } = state.authentication;
   const { alert } = state;
   return {
@@ -48,7 +48,10 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(Settings);
 
 Settings.propTypes = {
-  alert: PropTypes.object,
+  alert: PropTypes.shape({
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
   dispatch: PropTypes.func,
   updated: PropTypes.bool
 };

@@ -17,7 +17,20 @@ $table-text: #9ca1b2;
           background-color: $table-bg;
         }
         .rt-th {
-          padding: 20px 5px;
+          padding: 20px;
+          text-align: start;
+
+          &:before {
+            font-family: FontAwesome;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            font-size: 14px;
+            content: '\f078';
+            color: $table-text;
+            right: 10px;
+          }
         }
 
         .rt-resizable-header-content {
@@ -42,5 +55,43 @@ $table-text: #9ca1b2;
         }
       }
     }
+  }
+}
+
+.ReactTable .rt-thead .rt-th.-sort-asc,
+.ReactTable .rt-thead .rt-td.-sort-asc {
+  box-shadow: none;
+  position: relative; 
+  color: $color-white;
+
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 14px;
+    content: '\f078';
+    color: $color-white;
+    right: 10px;
+  }
+}
+
+.ReactTable .rt-thead .rt-th.-sort-desc,
+.ReactTable .rt-thead .rt-td.-sort-desc {
+  box-shadow: none;
+  position: relative; 
+  color: $color-white;
+
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 14px;
+    content: '\f077';
+    color: $color-white;
+    right: 10px;
   }
 }

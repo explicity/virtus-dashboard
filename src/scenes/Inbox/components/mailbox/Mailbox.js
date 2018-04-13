@@ -19,34 +19,33 @@ class Mailbox extends Component {
     this.handleSelectEmail = this.handleSelectEmail.bind(this);
   }
 
-  handleSelectEmail(id) {
-    this.setState({
-      emailId: id
-    });
-  }
-
   componentWillMount() {
     const { emailId } = this.state;
     const { openEmail } = this.props;
     if (emailId !== openEmail) {
       this.setState({
         emailId: openEmail
-      })
+      });
     }
+  }
+
+  handleSelectEmail(id) {
+    this.setState({
+      emailId: id
+    });
   }
 
   render() {
     const { emails, openEmail } = this.props;
     const { emailId } = this.state;
-    let mail; let messages;
+    let mail;
+    let messages;
     let selectedEmail;
 
     if (emailId) {
       mail = emails.filter(mail => mail.id === emailId)[0];
-      messages = messagesData.filter(
-      messages => messages.id === mail.id
-    )[0];
-      selectedEmail = <Chat id={mail.id} user={mail} messages={messages} />
+      messages = messagesData.filter(messages => messages.id === mail.id)[0];
+      selectedEmail = <Chat id={mail.id} user={mail} messages={messages} />;
     } else {
       selectedEmail = <NoneSelected />;
     }
@@ -60,9 +59,9 @@ class Mailbox extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { openEmail } = state.direction;
   return { openEmail };
-}
+};
 
 export default connect(mapStateToProps)(Mailbox);

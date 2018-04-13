@@ -86,3 +86,11 @@ $color-placeholder: #9ca1b2;
 .inbox {
   max-height: calc(100vh - 60px);
 }
+
+.md-display {
+  
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+}

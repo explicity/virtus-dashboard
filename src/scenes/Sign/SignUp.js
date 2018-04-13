@@ -5,7 +5,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 import SignUpTabs from './components/SignUpTabs.js';
 
 import Logo from './img/logo.png';
-import './signup-section.scss';
+import './signupSection.scss';
 
 export default class SignUp extends Component {
   constructor(props) {

@@ -114,7 +114,10 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Login);
 
 Login.propTypes = {
-  alert: PropTypes.object,
+  alert: PropTypes.shape({
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
   dispatch: PropTypes.func,
   loggedIn: PropTypes.bool
 };

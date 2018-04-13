@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import moment from 'moment';
 
 import messagesData from 'scenes/Inbox/components/chat/messagesData';
 
-import './inbox-item.scss';
+import './inboxItem.scss';
 
 export default class InboxItem extends Component {
   constructor(props) {
@@ -22,7 +24,7 @@ export default class InboxItem extends Component {
   render() {
     const { item } = this.props;
     const messages = messagesData.filter(message => message.id === item.id)[0];
-    const { chat } = messages;
+    const { chat } = messages ;
     return (
       <div className="item" onClick={this.readMessage}>
         <div className="mr-3">
@@ -41,7 +43,7 @@ export default class InboxItem extends Component {
                 item.status === 'unreaded' ? 'active' : ''
               }`}
             >
-              {chat[0].time}
+              {moment(chat[chat.length - 1].time).calendar()}
             </p>
           </div>
           <p className="content-info">{chat[chat.length - 1].message}</p>
@@ -50,3 +52,13 @@ export default class InboxItem extends Component {
     );
   }
 }
+
+InboxItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+    url: PropTypes.string,
+    username: PropTypes.string
+  }),
+  Selected: PropTypes.func
+};

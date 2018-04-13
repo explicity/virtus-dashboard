@@ -54,22 +54,24 @@ export default class NavbarMenu extends Component {
             <Nav className="ml-auto navbar-main" navbar>
               <NavItem>
                 <MediaQuery minWidth={768}>
-                  <a href=" " className="btn btn-primary">
+                  <Link to="/home" className="btn btn-primary">
                     <span>Add</span>
                     <i className="fa fa-plus" aria-hidden="true" />
-                  </a>
+                  </Link>
                 </MediaQuery>
                 <MediaQuery maxWidth={767}>
-                  <a href=" " className="nav-item-option">Add new project</a>
+                  <Link to="/home" onClick={this.toggle} className="nav-item-option">
+                    Add new project
+                  </Link>
                 </MediaQuery>
               </NavItem>
               <NavItem>
                 <SearchBox updateData={this.updateData} />
               </NavItem>
               <NavItem>
-                <Notifications />
+                <Notifications toggle={this.toggle} />
               </NavItem>
-                <NavbarDropdown />
+              <NavbarDropdown toggle={this.toggle} />
             </Nav>
           </Collapse>
         </Navbar>

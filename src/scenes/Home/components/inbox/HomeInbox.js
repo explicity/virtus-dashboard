@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
 import _map from 'lodash/map';
 
-import InboxItem from './components/InboxItem';
 import data from 'scenes/Inbox/components/data';
+import InboxItem from './components/InboxItem';
 
 import './inbox.scss';
 
@@ -43,8 +44,8 @@ class HomeInbox extends Component {
           </h3>
         </header>
         <div className="inner-item item-message">
-          {_map(data[0].emails, (item, index) => (
-            <Link to="/inbox" key={item.id} >
+          {_map(data[0].emails, item => (
+            <Link to="/inbox" key={item.id}>
               <InboxItem
                 item={item}
                 Selected={() => this.handleMessage(item.id)}
@@ -58,3 +59,8 @@ class HomeInbox extends Component {
 }
 
 export default connect()(HomeInbox);
+
+HomeInbox.propTypes = {
+  dispatch: PropTypes.func,
+};
+
