@@ -56,12 +56,12 @@ export default [
     company: 'Symu.co',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Planning',
     progress: 15,
     deadline: moment('2018-06-01').format('D MMMM YYYY'),
     spent: '15 hours',
-    email: user.email
+    email: user ? user.email : ''
   },
 
   {
@@ -84,12 +84,12 @@ export default [
     company: 'Facebook',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Design',
     progress: 40,
     deadline: moment('2018-09-30').format('D MMMM YYYY'),
     spent: '52 hours',
-    email: user.email
+    email: user ? user.email : ''
   },
 
   {
@@ -112,12 +112,12 @@ export default [
     company: 'Facebook',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Design',
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email
+    email: user ? user.email : ''
   },
 
   {
@@ -237,12 +237,12 @@ export default [
     company: 'Google',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Testing',
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email
+    email: user ? user.email : ''
   },
   {
     id: 17,
@@ -250,12 +250,12 @@ export default [
     company: 'Facebook',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Completed',
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email
+    email: user ? user.email : ''
   },
   {
     id: 18,
@@ -263,11 +263,11 @@ export default [
     company: 'Symu.co',
     price: 1500,
     url: User,
-    username: user.username,
+    username: user ? user.username : '',
     status: 'Testing',
     progress: 0,
     deadline: moment('2018-07-03').format('D MMMM YYYY'),
     spent: '0 hours',
-    email: user.email
+    email: user ? user.email : ''
   }
 ];

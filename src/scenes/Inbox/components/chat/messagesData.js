@@ -17,7 +17,7 @@ export default [
       },
 
       {
-        user: user.username,
+        user: user ? user.username : '',
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         time: '20180412'
@@ -30,7 +30,7 @@ export default [
       },
 
       {
-        user: user.username,
+        user: user ? user.username : '',
         message:
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         time: '20180412'
@@ -64,7 +64,7 @@ export default [
       },
 
       {
-        user: user.username,
+        user: user ? user.username : '',
         message: 'Lorem ipsum dolor sit amet',
         time: '20180413'
       }
